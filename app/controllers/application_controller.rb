@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
     render html: "Hi there."
   end
   
-  def stillSettingUp
+  def home
     render file: "layouts/application.html.erb"
   end
 end
