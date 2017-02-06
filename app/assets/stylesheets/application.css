@@ -13,3 +13,45 @@
  *= require_tree .
  *= require_self
  */
+
+body {
+	padding-top: 10px;
+	text-align: center;
+	background: #dfdfdf url("store_bg_wide.png") repeat-x 50px 0px fixed;
+}
+
+a {
+	color: inherit;
+	text-decoration: underline;
+}
+
+a:hover {
+	color: #000099;
+	text-decoration: underline;
+}
+
+ul li {
+	list-style-position: inside;
+	list-style: square;
+	text-align: left;
+}
+
+img {
+	padding: 30px;
+	border: solid;
+	border-color: #00EE55;
+}
+
+.storeTitle {
+	text-decoration: overline underline;
+	color: #cf9a9a;
+	margin: 40px;
+}
+
+.headerBar {
+	padding-top: 0px;
+	margin-top: 0px;
+	text-decoration: none;
+	text-align: center;
+	background-color: #333333;
+}
