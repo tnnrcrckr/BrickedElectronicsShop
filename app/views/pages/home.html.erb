@@ -7,12 +7,58 @@
 </head>
 
 <body>
-	<div class="headerBar">
-		
-		<div class="loginSpot">
-		    <a href="pages/account">Login here!</a>
+	<header class="headerbarContainer">
+		<div class="dropdown">
+			<p>Products</p>
+			<div class="dropdown-content">
+                <ul class="dropdownList">
+                	<!--  TODO Generate list(s) via JScript -->
+                    <li>Televisions</li>
+                    <li>Monitors</li>
+                    <li>Personal Computers</li>
+                    <li>Radios</li>
+                    <Li>Cell Phones</Li>
+                </ul>
+            </div>
 		</div>
-	</div>
+		
+		<div class="dropdown">
+			<p>Reviews</p>
+			<div class="dropdown-content">
+                <ul class="dropdownList">See reviews for:
+                	<!--  TODO Generate list(s) via JScript -->
+                    <li>Televisions</li>
+                    <li>Monitors</li>
+                    <li>Personal Computers</li>
+                    <li>Radios</li>
+                    <Li>Cell Phones</Li>
+                    <Li>Any product</Li>
+                </ul>
+            </div>
+		</div>
+		
+		<div class="dropdown">
+			<p>Login/Register</p>
+			<div class="dropdown-content">
+                <form>
+                    Username
+                    <input type="text">
+                    Password
+                    <input type="text">
+                    
+                    <br>
+                    
+                    <submit type="button">
+                        <button class="button btn-login">Login</button>
+                    </submit>
+                    <submit type="button">
+                        <button class="button btn-register">Register</button>
+                    </submit>
+                </form>
+            </div>
+		</div>
+		
+	</header>
 
 	<h2 class="storeTitle">
 		Bricked Electronics Shop
@@ -22,33 +68,15 @@
 		Bad electronics are what we're about!
 	</h5>
 	
-	
-	<div class="products">
-		<img style="margin:0 auto; display:block" src="images/download.jpg" alt="A picture of a cat." height="100"></img>
-		<h4>Here's what we're selling</h4>
-    	<ul>
-		    <li>Televisions</li>
-		    <li>Radios</li>
-		    <li>Cell Phones</li>
-		</ul>
+	<div class="featured">
+	    Try this product!
 	</div>
 	
 	<div class="userReviews">
-		<table>
-		    <caption>Product stock</caption>
-	
-			<th></th>
-			<th>Televisions</th>
-			<th>Radios</th>
-			<th>Phones</th>
-			
-			<tr>
-				<th>stock</th>
-				<td>30</td>
-				<td>15</td>
-				<td>84</td>
-			</tr>
-		</table>
+	    <h>User Reviews</h>
+		<ul class="reviewList">
+		    
+		</ul>
 	</div>
 	
 </body>

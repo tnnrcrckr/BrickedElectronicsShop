@@ -15,9 +15,23 @@
  */
 
 body {
-	padding-top: 10px;
+	padding:inherit;
+	padding-top:30px;
+	margin:auto;
 	text-align: center;
-	background: #dfdfdf url("store_bg_wide.png") repeat-x 50px 0px fixed;
+	background: #f1f1f1 url("store_bg_wide.png") repeat-x 50px 0px scroll;
+}
+
+div {
+	padding-top: 10px;
+	padding-bottom: 10px;
+	margin:auto;
+}
+
+header {
+	text-decoration: none;
+	text-align: center;
+	color: #dfdfdf;
 }
 
 a {
@@ -26,13 +40,13 @@ a {
 }
 
 a:hover {
-	color: #000099;
+	color: #00AADD;
 	text-decoration: underline;
 }
 
 ul li {
 	list-style-position: inside;
-	list-style: square;
+	list-style: none;
 	text-align: left;
 }
 
@@ -42,16 +56,48 @@ img {
 	border-color: #00EE55;
 }
 
+formfield {
+	padding:inherit;
+	margin:inherit;
+}
+
+.btn-login {
+	background-color:#2288df;
+}
+.btn-register {
+	background-color: #22df88;
+}
+
 .storeTitle {
 	text-decoration: overline underline;
-	color: #cf9a9a;
+	color: #cf8a8a;
 	margin: 40px;
 }
 
-.headerBar {
-	padding-top: 0px;
-	margin-top: 0px;
-	text-decoration: none;
-	text-align: center;
-	background-color: #333333;
+.loginSpot {
+	padding:inherit;
+	margin:inherit;
+	text-align:inherit;
+	background-color:inherit;
+	color:white;
+}
+
+.dropdown {
+	position: relative;
+	display: inline-block;
+	margin-right:5px;
+	margin-left: 5px;
+}
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    color: #393939;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 12px 16px;
+    z-index: 1;
+}
+.dropdown:hover .dropdown-content {
+    display: inherit;
 }
