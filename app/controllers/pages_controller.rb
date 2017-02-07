@@ -1,17 +1,17 @@
 class PagesController < ApplicationController
   def home
-    render file: "layouts/application.html.erb"
+    render file: "pages/home.html.erb"
   end
 
   def help
-    render html: "Need help?"
+    render file: "pages/help.html.erb"
   end
 
   def shop
-    render html: "You are shopping."
+    render file: "pages/shop.html.erb"
   end
 
   def account
-    render html: "This is your account."
+    render file: "pages/account.html.erb"
   end
 end
