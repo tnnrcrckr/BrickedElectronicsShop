@@ -4,10 +4,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   
   def hello
-    render html: "Hi there."
+    render html: "Hi there. Welcome to the store."
   end
-  
-  def home
-    render file: "layouts/application.html.erb"
-  end
+
 end
