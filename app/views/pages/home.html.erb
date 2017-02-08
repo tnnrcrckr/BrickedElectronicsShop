@@ -11,14 +11,25 @@
 		<div class="dropdown">
 			<p>Products</p>
 			<div class="dropdown-content">
-                <ul class="dropdownList">
-                	<!--  TODO Generate list(s) via JScript -->
-                    <li>Televisions</li>
-                    <li>Monitors</li>
-                    <li>Personal Computers</li>
-                    <li>Radios</li>
-                    <Li>Cell Phones</Li>
-                </ul>
+				<div class="prodItems">
+					<a>Television</a>
+				</div>
+				
+				<div class="prodItems">
+					<a>Personal Computers</a>
+				</div>
+				
+				<div class="prodItems">
+					<a>Radios</a>
+				</div>
+				
+				<div class="prodItems">
+					<a>Cell Phones</a>
+				</div>
+				
+				<div class="prodItems additionalSelect">
+					
+				</div>
             </div>
 		</div>
 		
@@ -60,25 +71,40 @@
 		
 	</header>
 
-	<h2 class="storeTitle">
+	<p class="storeTitle">
 		Bricked Electronics Shop
-	</h2>
+	</p>
 	
-	<h5 class="storeMotto">
-		Bad electronics are what we're about!
-	</h5>
+	<p class="storeMotto">
+		We can't fix what isn't bricked!
+	</p>
 	
 	<div class="featured">
-	    Try this product!
+	    Try this product! <br>
+	    Also, look at this review for this product.
 	</div>
 	
 	<div class="userReviews">
-	    <h>User Reviews</h>
+	    <h>User Reviews will be here</h>
 		<ul class="reviewList">
 		    
 		</ul>
 	</div>
 	
+	<div>
+		<script>
+			var i = 100;
+			while(i > 1)
+			{
+				document.write(i + "<br>");
+				i -= 5;
+			}
+		</script>
+	</div>
+	
+	<div id="footer">
+		<p>CopyRights and ish</p>
+	</div>
 </body>
 </html>
 
