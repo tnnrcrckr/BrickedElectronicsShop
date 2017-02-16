@@ -16,7 +16,7 @@
 
 body {
 	height:100%;
-	padding-top:10px;
+	padding-top:50px;
 	font-size:13pt;
 	font-family: monospace;
 	margin:auto;
@@ -55,6 +55,7 @@ a:hover {
 .dropdown-content {
     display: none;
     position: absolute;
+    left:-15px;
     background-color: #f9f9f9;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     padding: 8px 10px;
@@ -68,38 +69,82 @@ a:hover {
     display: block;
 }
 
-#header{
-	margin-top:40px;
-}
-
 #header div .dropdown {
     padding:10px;
     
-    border-right:solid;
-    border-right-color: #004f00;
-    border-left: solid;
-    border-left-color: #004f00;
+    border-style: hidden solid;
+    border: 2px #00fa00;
+    border-right: 2px solid #00fa00;
+    border-left: 2px solid #00fa00;
+}
+#header div .dropdown:hover{
+    transition: border 0.25s ease;
+    
+    border-top: 2px solid #00fa00;
+    border-bottom: 2px solid #00fa00;
 }
 
-#login input{
-	box-sizing: border-box;
-	width:100%;
-	height: 2em;
-	margin: 0 0 1em;
-	padding: 1em;
-	border: 1px solid #c0c0c0;
-	background: #ffffff;
-	resize: none;
-	outline:none;
+#login {
+  margin: 10px;
 }
+
+/*  Begin header login texts  */
+#login input[type="text"]{
+  box-sizing: border-box;
+  width: 100%;
+  height: 3em;
+  margin: 0 0 1em;
+  padding: 0 1em;
+  border: 1px solid #ccc;
+  background: #fff;
+  resize: none;
+  outline: none;
+}
+
+#login input[type="text"][required]:focus{
+	border-color: #008fdf;
+}
+
+#login input[type="text"][required]:focus + label[placeholder]:before{
+	color: #008fdf;
+}
+#login input[type="text"][required]:focus + label[alt]:before,
+#login input[type="text"][required]:valid + label[alt]:before{
+  transition-duration: .2s;
+  transform: translate(0, -1.3em) scale(0.9, 0.9);
+}
+#login input[type="text"][required]:invalid + label[alt]:before{
+  content: attr(alt);
+}
+#login input[type="text"][required] + label[alt]{
+  display: block;
+  pointer-events: none;
+  line-height: 2em;
+  margin-top: calc(-3em - 2px);
+  margin-bottom: calc((3em - 1em) + 2px);
+}
+#login input[type="text"][required] + label[alt]:before{
+  content: attr(alt);
+  display: inline-block;
+  margin: 0 calc(1em + 2px);
+  padding: 0 2px;
+  color: #898989;
+  white-space: nowrap;
+  transition: 0.3s ease-in-out;
+}
+/*  End of header login texts  */
 
 #footer {
 	margin:0px;
-	padding-left:0px;
-	padding-right:0px;
+	margin-top:5px;
+	
+	padding-top:1em;
+	
 	font-size: 8pt;
-	height:20px;   /* footer uses static height */
+	text-align: center;
+	height: 4em;   /* footer uses static height */
 	position: static;
 	bottom:0;
-	width:100%;
+	
+	background-color: #dedede;
 }
