@@ -10,6 +10,10 @@
 	
 	<div id=header>
 		<div>
+			<div class="dropdown butnotreally">
+				<a href="/pages/home"><img src="/assets/store_home.png" alt="Home Icon" height="15px"></img></a>
+			</div>
+			
 			<div class="dropdown">
 				<span>Products</span>
 				<div class="dropdown-content">
@@ -27,6 +31,7 @@
 					<p>Computers</p>
 					<p>Monitors</p>
 					<p>Televisions</p>
+					<p>Random</p>
 				</div>
 			</div>
 		
@@ -40,8 +45,17 @@
 						<input required=' ' type="text">
 						<label alt="Password"></label>
 						
-						<button>Confirm</button>
+						<button type="submit" confirmtype="login" formmethod="post">Log in</button>
+						
+						<button type="submit" confirmtype="register" formmethod="post">Register</button>
 					</form>
+				</div>
+			</div>
+			
+			<div id="headercart" class="dropdown butnotreally">
+				<button id="togglecartdisplay" type="button" onclick="toggleCartDisplay()"><img src="/assets/store_cart.png" alt="Shopping Cart Icon" height="15px"></img>
+				<div id="shoppingcart">
+					SHOPPING CART
 				</div>
 			</div>
 		
@@ -65,7 +79,7 @@
 		    Also, look at this review for this product.
 		</div>
 		
-		<a href="/pages/home"><img src="../../assets/images/store_home.png" alt="Home Icon"></img></a>
+		
 		
 		<div class="userReviews">
 		    <h>User Reviews will be here</h>

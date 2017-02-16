@@ -40,13 +40,14 @@ a:hover {
 	text-decoration: overline underline;
 	color: #b75a5a;
 	margin: 30px;
-	margin-top:10px;
 }
 
 .storeMotto {
 	font-style: italic;
 }
 
+
+/*  Begin header stuff  */
 .dropdown {
     position: relative;
     display: inline-block;
@@ -74,19 +75,20 @@ a:hover {
     
     border-style: hidden solid;
     border: 2px #00fa00;
-    border-right: 2px solid #00fa00;
-    border-left: 2px solid #00fa00;
+    border-right: 2px solid #fafa00;
+    border-left: 2px solid #fafa00;
 }
 #header div .dropdown:hover{
     transition: border 0.25s ease;
     
-    border-top: 2px solid #00fa00;
-    border-bottom: 2px solid #00fa00;
+    border-top: 2px solid #8c8c00;
+    border-bottom: 2px solid #8c8c00;
 }
 
 #login {
   margin: 10px;
 }
+
 
 /*  Begin header login texts  */
 #login input[type="text"]{
@@ -105,7 +107,7 @@ a:hover {
 	border-color: #008fdf;
 }
 
-#login input[type="text"][required]:focus + label[placeholder]:before{
+#login input[type="text"][required]:focus + label[alt]:before{
 	color: #008fdf;
 }
 #login input[type="text"][required]:focus + label[alt]:before,
@@ -133,6 +135,54 @@ a:hover {
   transition: 0.3s ease-in-out;
 }
 /*  End of header login texts  */
+
+
+/*  Begin header login buttons  */
+#login button[confirmtype="login"], #login button[confirmtype="register"]{
+  margin: 5px;
+  margin-top: 0px;
+  padding: 0.5em 1.5em;
+  color:#000;
+  background-color: transparent;
+  transition: background-color 0.3s;
+}
+#login button[confirmtype="login"]{
+  margin-right: 0px;
+  border-color: #2aaf69
+}
+#login button[confirmtype="register"]{
+  margin-left: 0px;
+  border-color: #ba2489;
+}
+
+#login button[confirmtype="login"]:hover{
+  color: #fff;
+  background-color: #2aaf69;
+}
+
+#login button[confirmtype="register"]:hover{
+  color: #fff;
+  background-color: #ba2489;
+}
+/*  End of header login buttons  */
+
+/*  Begin shopping cart stuff  */
+#togglecartdisplay {
+  background-color: inherit;
+  border:none;
+  padding:0px;
+}
+#shoppingcart {
+  display: none;
+  position: relative;
+}
+#headercart:onlick #shoppingcart{
+  display: inline-block;
+}
+/*  End of shopping cart stuff  */
+
+/*  End of header stuff  */
+
 
 #footer {
 	margin:0px;
