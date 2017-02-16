@@ -34,6 +34,10 @@ a:hover {
 	text-decoration: underline;
 }
 
+img {
+  outline: none;
+}
+
 .storeTitle {
 	font-size: 30px;
 	font-family: monospace;
@@ -67,22 +71,57 @@ a:hover {
 }
 
 .dropdown:hover .dropdown-content {
-    display: block;
+    display: inline-block;
 }
 
 #header div .dropdown {
     padding:10px;
     
-    border-style: hidden solid;
-    border: 2px #00fa00;
-    border-right: 2px solid #fafa00;
-    border-left: 2px solid #fafa00;
+    border: 2px solid #fafa00;
+    border-top: hidden;
+    border-bottom: hidden;
 }
-#header div .dropdown:hover{
-    transition: border 0.25s ease;
-    
-    border-top: 2px solid #8c8c00;
-    border-bottom: 2px solid #8c8c00;
+/*  http://ianlunn.github.io/Hover/  */
+#header div .dropdown:before{
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: 50%;
+  right: 50%;
+  top: 0;
+  background: #fafa00;
+  height: 2px;
+  -webkit-transition-property: left, right;
+  transition-property: left, right;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+#header div .dropdown:after{
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: 50%;
+  right: 50%;
+  bottom: 0;
+  background: #fafa00;
+  height: 2px;
+  -webkit-transition-property: left, right;
+  transition-property: left, right;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+#header div .dropdown:hover:before,
+#header div .dropdown:focus:before,
+#header div .dropdown:active:before,
+#header div .dropdown:hover:after,
+#header div .dropdown:focus:after,
+#header div .dropdown:active:after{
+  left: 0;
+  right: 0;
 }
 
 #login {
@@ -152,7 +191,7 @@ a:hover {
 }
 #login button[confirmtype="register"]{
   margin-left: 0px;
-  border-color: #ba2489;
+  border-color: #9e2489;
 }
 
 #login button[confirmtype="login"]:hover{
@@ -162,7 +201,7 @@ a:hover {
 
 #login button[confirmtype="register"]:hover{
   color: #fff;
-  background-color: #ba2489;
+  background-color: #9e2489;
 }
 /*  End of header login buttons  */
 
