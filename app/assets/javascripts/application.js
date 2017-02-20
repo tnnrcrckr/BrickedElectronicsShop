@@ -14,3 +14,12 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+/*
+function toggleCartDisplay(){
+    if (document.getElementById("shoppingcart").style.display == "none")
+        document.getElementById("shoppingcart").style.display = "inline-block";
+    else
+        document.getElementById("shoppingcart").style.display = "none";
+	
+}*/

@@ -16,22 +16,22 @@
 			
 			<div class="dropdown">
 				<span>Products</span>
-				<div class="dropdown-content">
-					<p>Phones</p>
-					<p>Computers</p>
-					<p>Monitors</p>
-					<p>Televisions</p>
+				<div id="reviewdrop" class="dropdown-content">
+					<div>Phones</div>
+					<div>Computers</div>
+					<div>Monitors</div>
+					<div>Televisions</div>
 				</div>
 			</div>
 		
 			<div class="dropdown">
 				<span>Reviews</span>
 				<div class="dropdown-content">
-					<p>Phones</p>
-					<p>Computers</p>
-					<p>Monitors</p>
-					<p>Televisions</p>
-					<p>Random</p>
+					<div>Phones</div>
+					<div>Computers</div>
+					<div>Monitors</div>
+					<div>Televisions</div>
+					<div>Random</div>
 				</div>
 			</div>
 		
@@ -45,20 +45,20 @@
 						<input required=' ' type="text">
 						<label alt="Password"></label>
 						
-						<button type="submit" confirmtype="login" formmethod="post">Log in</button>
 						
+						<button type="submit" confirmtype="login" formmethod="post">Log in</button>
 						<button type="submit" confirmtype="register" formmethod="post">Register</button>
+						
 					</form>
 				</div>
 			</div>
 			
-			<div id="headercart" class="dropdown butnotreally">
-				<button id="togglecartdisplay" type="button" onclick="toggleCartDisplay()"><img src="/assets/store_cart.png" alt="Shopping Cart Icon" height="15px"></img>
-				<div id="shoppingcart">
-					SHOPPING CART
+			<div id="headercart" class="dropdown">
+				<img src="/assets/store_cart.png" alt="Shopping Cart Icon" height="15px"></img>
+				<div id="cartdropdown" class="dropdown-content">
+					<span>Your shopping cart appears to be empty.</span>
 				</div>
 			</div>
-		
 		</div> <!--drop potions-->
 		
 	</div>	<!--header div-->
@@ -106,6 +106,7 @@
 					document.write(i + "<br>");
 					i--;
 				}
+				
 			</script>
 		</div>
 	</div>	<!--body div-->
