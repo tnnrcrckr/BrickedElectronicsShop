@@ -1,2 +1,20 @@
 2/20/2017
+    We followed ch. 3 in the textbook.
+    
+    rails generate controller StaticPages <list of actions>
+        SPController inherits from the application controller
+    
+    .erb - html file that can have embedded ruby
+        indicated with <%= ... %>
+        
+    testing
+        code: 200 is a successful response
+        
+    test driven development (TDD)
+        writing tests before the code.
+        KATA
+        Good for:
+            Security code
+            Refactoring code - Internal (ONLY) changes to code
+    
     
