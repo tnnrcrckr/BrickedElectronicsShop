@@ -1,64 +1,5 @@
 <% provide(:title, "Home") %>
-
 <body>
-	<div id=header>
-		<div>
-			<div class="dropdown butnotreally">
-				<a href="pages/home"><img src="/assets/store_home.png" alt="Home Icon" height="15px"></img></a>
-			</div>
-			
-			<div class="dropdown">
-				<span>Products</span>
-				<div class="dropdown-content">
-					<div>Phones</div>
-					<div>Computers</div>
-					<div>Monitors</div>
-					<div>Televisions</div>
-					<div><a id="inheritLinks" href="pages/shop">Keyword Search</a></div>
-				</div>
-			</div>
-		
-			<div class="dropdown">
-				<span>Reviews</span>
-				<div class="dropdown-content">
-					<div>Phones</div>
-					<div>Computers</div>
-					<div>Monitors</div>
-					<div>Televisions</div>
-					<div>Random</div>
-				</div>
-			</div>
-		
-			<div class="dropdown">
-				<span>Login/Register</span>
-				<div id="logindropdown" class="dropdown-content">
-					<form id="login">
-						<input required=' ' type="text">
-						<label alt="Email"></label>
-						
-						<input required=' ' type="text">
-						<label alt="Password"></label>
-						
-						
-						<button type="submit" confirmtype="login" formmethod="post">Log in</button>
-						<button type="submit" confirmtype="register" formmethod="post">Register</button>
-						
-					</form>
-				</div>
-			</div>
-			
-			<div id="headercart" class="dropdown">
-				<img src="/assets/store_cart.png" alt="Shopping Cart Icon" height="15px"></img>
-				<div id="cartdropdown" class="dropdown-content">
-					<span>Your shopping cart appears to be empty.</span>
-				</div>
-			</div>
-		</div> <!--drop potions-->
-		
-	</div>	<!--header div-->
-	
-	
-	
 	<div id="body">
 		<p class="storeTitle">
 			Bricked Electronics Shop
@@ -69,15 +10,12 @@
 		</p>
 		
 		<div class="featured">
-		    <div>Try this product!</div>
+		    <h3>Try this product!</h3>
 			<img src="featured_ad.png"></img>
 		    <div>Also, look at this review for this product.</div>
 		</div>
 		
-		
-		
 		<div class="userReviews">
-		    <h>User Reviews will be here</h>
 			<ul class="reviewList">
 			    <li>I'm a review!</li>
 			    <li>I'm a review!</li>
@@ -86,11 +24,18 @@
 			</ul>
 		</div>
 		
+		<div>
+			<a href=<%= pages_help_path %>>Help</a>
+			<a href=<%= pages_about_path %>>About</a>
+			<a href=<%= pages_shop_path %>>Shop</a>
+			<a href=<%= pages_account_path %>>Account</a>
+		</div>
+		
+		<script>
+			// for(i = 100; i > 0; i--)
+			// 	document.write(i + "<br>");
+		</script>
 	</div>	<!--body div-->
-	
-	<div id="footer">
-		<p>Created by Tanner Crocker &#9|&#9 Like what you see? <a href="mailto:tec@email.uscupstate.edu">Contact me</a></p>
-	</div>	<!--footer div-->
 </body>
 </html>
 

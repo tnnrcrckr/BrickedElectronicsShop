@@ -9,7 +9,68 @@
 </head>
 
 <body>
+	<div id=header>
+		<div>
+			<div class="dropdown butnotreally">
+				<a href=<%= pages_home_path %>><img src="/assets/store_home.png" alt="Home Icon" height="15px"></img></a>
+			</div>
+			
+			<div class="dropdown">
+				<span>Products</span>
+				<div class="dropdown-content">
+					<div>Phones</div>
+					<div>Computers</div>
+					<div>Monitors</div>
+					<div>Televisions</div>
+					<div><a id="inheritLinks" href=<%= pages_shop_path %>>Keyword Search</a></div>
+				</div>
+			</div>
+		
+			<div class="dropdown">
+				<span>Reviews</span>
+				<div class="dropdown-content">
+					<div>Phones</div>
+					<div>Computers</div>
+					<div>Monitors</div>
+					<div>Televisions</div>
+					<div>Random</div>
+				</div>
+			</div>
+		
+			<div class="dropdown">
+				<span>Login/Register</span>
+				<div id="logindropdown" class="dropdown-content">
+					<form id="login">
+						<input required=' ' type="text">
+						<label alt="Email"></label>
+						
+						<input required=' ' type="text">
+						<label alt="Password"></label>
+						
+						
+						<button type="submit" confirmtype="login" formmethod="post">Log in</button>
+						<button type="submit" confirmtype="register" formmethod="post">Register</button>
+						
+					</form>
+				</div>
+			</div>
+			
+			<div id="headercart" class="dropdown">
+				<img src="/assets/store_cart.png" alt="Shopping Cart Icon" height="15px"></img>
+				<div id="cartdropdown" class="dropdown-content">
+					<span>Your shopping cart appears to be empty.</span>
+				</div>
+			</div>
+		</div> <!--drop potions-->
+		
+	</div>	<!--header div-->
+  
 	<%= yield %>
+	
+	
+	<div id="footer">
+		<p>Created by Tanner Crocker &#9|&#9 Like what you see? <a href="mailto:tec@email.uscupstate.edu">Contact me</a></p>
+	</div>	<!--footer div-->
 	
 </body>
 </html>

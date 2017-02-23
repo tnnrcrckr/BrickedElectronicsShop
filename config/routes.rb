@@ -9,4 +9,6 @@ Rails.application.routes.draw do
   get 'pages/shop'
 
   get 'pages/account'
+  
+  get 'pages/about'
 end
