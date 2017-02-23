@@ -261,15 +261,24 @@ button{
 	margin:0px;
 	margin-top:5px;
 	
-	padding-top:1em;
+	padding: 0.5em;
 	
 	font-size: 8pt;
 	text-align: center;
-	height: 4em;   /* footer uses static height */
+	
 	position: static;
-	bottom:0;
+	bottom:0%;
 	
 	background-color: #dedede;
 	
 	z-index: -5;
+}
+
+a[id=inheritLinks] {
+  text-decoration: inherit;
+  color:inherit;
+}
+
+.reviewList {
+  list-style-type: none;
 }

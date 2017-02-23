@@ -17,4 +17,16 @@
             Security code
             Refactoring code - Internal (ONLY) changes to code
     
+2/22/2017
+    Continuing Ch. 3...
     
+    More TDD
+        Added select tests to find an HTML element with certain text in it
+        Can also add Ruby to the testing file (Can create variables to remove redundant code)
+        
+    FOR PROJECT (By next week)
+        -Homepage exists w/ basic content about prod/service
+        -Navigation links exist
+        -Main layout is visible
+        -Basic styling is available
+        -Rails framework is utilized

@@ -1,17 +1,10 @@
-<!DOCTYPE html>
-<html lang="en-us">
-<head>
-  <title>Bricked Electronics</title>
-	<link rel="stylesheet" type="text/css" href="../assets/stylesheets/application.css"></link>
-	<meta charset = "utf-8">
-</head>
+<% provide(:title, "Home") %>
 
 <body>
-	
 	<div id=header>
 		<div>
 			<div class="dropdown butnotreally">
-				<a href="/pages/home"><img src="/assets/store_home.png" alt="Home Icon" height="15px"></img></a>
+				<a href="pages/home"><img src="/assets/store_home.png" alt="Home Icon" height="15px"></img></a>
 			</div>
 			
 			<div class="dropdown">
@@ -21,7 +14,7 @@
 					<div>Computers</div>
 					<div>Monitors</div>
 					<div>Televisions</div>
-					<div>Keyword Search</div>
+					<div><a id="inheritLinks" href="pages/shop">Keyword Search</a></div>
 				</div>
 			</div>
 		
@@ -76,8 +69,9 @@
 		</p>
 		
 		<div class="featured">
-		    Try this product! <br>
-		    Also, look at this review for this product.
+		    <div>Try this product!</div>
+			<img src="featured_ad.png"></img>
+		    <div>Also, look at this review for this product.</div>
 		</div>
 		
 		
@@ -85,31 +79,13 @@
 		<div class="userReviews">
 		    <h>User Reviews will be here</h>
 			<ul class="reviewList">
-			    
+			    <li>I'm a review!</li>
+			    <li>I'm a review!</li>
+			    <li>I'm a review!</li>
+			    <li>I'm a review!</li>
 			</ul>
 		</div>
 		
-		<div>
-			<input type="text" id="fname" onchange="alert('Text has changed')">
-			<button id="btn" type="button" onclick="alert('Test')">Click Me!</button>
-			<p id="demo"></p>
-			<script>
-			
-				document.getElementById("btn").onclick = function(){displayDate()};
-				
-				function displayDate() {
-					document.getElementById("demo").innerHTML = Date();
-				}
-				
-				var i = 100;
-				while(i > 1)
-				{
-					document.write(i + "<br>");
-					i--;
-				}
-				
-			</script>
-		</div>
 	</div>	<!--body div-->
 	
 	<div id="footer">
