@@ -11,4 +11,6 @@ Rails.application.routes.draw do
   get 'pages/account'
   
   get 'pages/about'
+  
+  get 'pages/navigation'
 end

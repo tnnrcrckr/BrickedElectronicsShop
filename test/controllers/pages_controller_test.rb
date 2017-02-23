@@ -30,9 +30,15 @@ class PagesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should get about" do
-    get pages_account_url
+    get pages_about_url
     assert_response :success
     assert_select "title", "About | #{@appTitle}"
+  end
+
+  test "should get navigation" do
+    get pages_navigation_url
+    assert_response :success
+    assert_select "title", "Site Map | #{@appTitle}"
   end
 
 end
