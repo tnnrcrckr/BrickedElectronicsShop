@@ -1,8 +1,33 @@
 <% provide(:title, "Shop") %>
-<br>
-
-<div>
-    Shop Page
+<div style="margin-top:2em;  margin-bottom:2em;">
+    <form id="keyword-search">
+        <button type="submit" confirmtype="search" formmethod="get"><img src="search_icon.png" height="30px" alt="Search Icon"></button>
+        <input required="no" type="text">
+        <label alt="Keyword Search"></label>
+    </form>
+    
+    <div style="margin: 10px auto; font-size:0.75em;">
+        <span>Keywords: </span>
+        <span id="currentKeywords"></span>
+    </div>
 </div>
 
-<br>
+<div style="margin-top:0em; margin-bottom:2em;">
+    <table id="productTable">
+        <thead>
+            </thead><th>Product Image</th><th>Product Name</th><th>Product Price</th>
+        </thead>
+        <tbody>
+            <tr>
+                <td><img src="SampleProductImage_Small.png" alt="Sample Product Image" width="80px"></td>
+                <td>Sample Product</td>
+                <td>$3.14</td>
+            </tr>
+            <tr>
+                <td><img src="SampleProductImage_Small.png" alt="Sample Product Image" width="80px"></td>
+                <td>Sample Product Two</td>
+                <td>$6.28</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

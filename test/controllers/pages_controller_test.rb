@@ -40,5 +40,10 @@ class PagesControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
     assert_select "title", "Site Map | #{@appTitle}"
   end
-
+  
+  test "should get reviews" do
+    get pages_reviews_url
+    assert_response :success
+    assert_select "title", "Reviews | #{@appTitle}"
+  end
 end

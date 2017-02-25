@@ -13,4 +13,6 @@ Rails.application.routes.draw do
   get 'pages/about'
   
   get 'pages/navigation'
+  
+  get 'pages/reviews'
 end
