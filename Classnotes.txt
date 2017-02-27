@@ -30,3 +30,9 @@
         -Main layout is visible
         -Basic styling is available
         -Rails framework is utilized
+        
+2/27/2017
+    Ruby Syntax
+    
+    yield/provide
+        Allows for information to be passed between pages.
