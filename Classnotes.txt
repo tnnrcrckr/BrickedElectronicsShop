@@ -1,3 +1,4 @@
+"Unit" 2
 2/20/2017
     We followed ch. 3 in the textbook.
     
@@ -33,6 +34,19 @@
         
 2/27/2017
     Ruby Syntax
+        
+        yield/provide
+            Allows for information to be passed between pages.
+            
+        Can create methods in "helpers" (aka Utilities / Utitlity class)
+        
+        module - Basically a public helper.
+        full_title(page_title = "")
+            This allows for a default parameter value.
+            
+        Brackets are inferred - close with "end"
+        
+        ? signifies a boolean return type in a method - just a convention, has no power
     
     yield/provide
         Allows for information to be passed between pages.
@@ -69,5 +83,116 @@
         Inspect method
             -Gives a literal representation of the object
             puts (1..5).to_a  VS  puts (1..5).to_a.inspect
+         
+    Rails Console
+        Stop command - ctrl+c
+        Exit - "exit" or ctrl+d (careful with ctrl+d)
+        
+        Everything in Ruby is an object.
+        
+        Ruby always returns something.
+        
+        String Interpolation
+            You can put a variable in a string by doing:
+                "#{var_name} Deese"
+        
+        puts - System.out.println()
+        print - System.out.print()
+        
+        esc sequences are similar to Java
+        
+        "" - Indicates a String interpretation
+        '' - Indicates a String literal  --Literals don't allow for Interpolation
+        
+        return is inferred (like Scala), however it can be written expressly
+            --Convention is to make as little clutter as possible
+        
+        && || !
+        
+        Parenthesis is optional(?) for things like if/elif statements
+        
+        Everything is an object, so everything has .to_s  (.toString())
+        Methods can be chained:
+            1.to_s.empty?
+            
+        nil is Java's null
+            *.nil? --Null check
+        
+        Inline ii/unless
+            <Line of code to maybe exe> if/unless <condition>
+            can do unless instead of if(!())
+        
+        Two false objects (They return false)
+            nil
+            false  --!!false -> the string false returns true lol
+            
+            Not zero -- !!0 ret true
+            
+        Method declaration
+            def <name>(<params>)
+                #params can be assigned a default value if they aren't provided
+            end
+        
+        Ranges
+            (0..9).to_a gives an array of ints from n1 to n2
+            You can even access a range if array elements -> a[2..4]
+            
+        Hashes
+            Key/Value pair
+            
+            user = {}  --creates empty hash
+            user = {"firstname" => "tanner"} --"Hash rockets"
+            user["firstname"]="tanner"
+            
+        Blocks
+            All four are the exact same and perform this (scala-like) pseudocode
+                [1,2,3,4,5].foreach( i => println(2*i))
+            (1..5).each { |i| puts 2 * i }
+            
+            for i in 1..5
+                puts 2*i
+                end
+            
+            (1..5).each do |i|
+                puts 2*i
+                end
+                
+            (1..5).map { |i| i*2 }
+            
+            In those, i is a block variable, you don't need a []-variable
+
+3/1/2017
+    Test info(Ruby):
+    Be prepared to know about interpolation, concatenation, difference of single/double quotes
+        Object (everything is object)
+        passing messages (printing to screen, I think?)
+        Boolean methods end with '?'
+        Methods ending in '!' mutate the data
+        if, elif, else
+        minimal parenthesis
+        method chaining
+        alternate (self-contained) if statements [AKA One liners]
+        don't /need/ returns
+        Arrays - Initialization(ranges) - Stack -> Push/Pop
+        Ranges - Parenths if using a method on range
+        Hashes - (1) user = {"firstname"=>"tanner",....}
+            Hashes extremely common in rails
+            (2) user = { :firstName => "tanner",... }
+            ':' indicates a symbol - an uninstantiable, immutable object - Symbol class
+            (3) user = { firstName: "tanner",... }
+                Now that its set as a symbol, the symbol will reference it -> user[:firstname]
+                Can init a spot in a hash, without its pre-existance
+                Hashes are nestable -> params[:user][:firstname]
+        Blocks
+            user.each { |key, value| puts "#{key} has value #{value}" }
+            
+            user.each do |key, value|
+                puts "#{key} has value #{value}"
+            end
+            
+        Inspect method
+            -Gives a literal representation of the object
+            puts (1..5).to_a  VS  puts (1..5).to_a.inspect
+            
             
             
