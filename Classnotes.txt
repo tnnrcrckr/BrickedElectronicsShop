@@ -36,3 +36,38 @@
     
     yield/provide
         Allows for information to be passed between pages.
+        
+3/1/2017
+    Test info(Ruby):
+    Be prepared to know about interpolation, concatenation, difference of single/double quotes
+        Object (everything is object)
+        passing messages (printing to screen, I think?)
+        Boolean methods end with '?'
+        Methods ending in '!' mutate the data
+        if, elif, else
+        minimal parenthesis
+        method chaining
+        alternate (self-contained) if statements [AKA One liners]
+        don't /need/ returns
+        Arrays - Initialization(ranges) - Stack -> Push/Pop
+        Ranges - Parenths if using a method on range
+        Hashes - (1) user = {"firstname"=>"tanner",....}
+            Hashes extremely common in rails
+            (2) user = { :firstName => "tanner",... }
+            ':' indicates a symbol - an uninstantiable, immutable object - Symbol class
+            (3) user = { firstName: "tanner",... }
+                Now that its set as a symbol, the symbol will reference it -> user[:firstname]
+                Can init a spot in a hash, without its pre-existance
+                Hashes are nestable -> params[:user][:firstname]
+        Blocks
+            user.each { |key, value| puts "#{key} has value #{value}" }
+            
+            user.each do |key, value|
+                puts "#{key} has value #{value}"
+            end
+            
+        Inspect method
+            -Gives a literal representation of the object
+            puts (1..5).to_a  VS  puts (1..5).to_a.inspect
+            
+            
