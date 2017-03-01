@@ -195,4 +195,28 @@
             puts (1..5).to_a  VS  puts (1..5).to_a.inspect
             
             
-            
+    --End test info/review
+    
+    Swizzling - Creating methods for a pre-existing class
+    class String
+        def palindrome?
+            self == self.reverse
+            end
+        end
+    --------
+    "asdfsadfsafa".palindrome?
+    
+    
+    clas User
+        attr_accessor :name, :email
+        
+        def initialize(attributes = {})
+            @name = attributes[:name]
+            @email = attributes[:email]
+            # '@' makes the variable global
+        end
+        
+        def
+        end
+        
+        'require' keyword
