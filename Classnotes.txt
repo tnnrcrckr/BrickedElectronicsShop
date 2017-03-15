@@ -207,7 +207,7 @@
     "asdfsadfsafa".palindrome?
     
     
-    clas User
+    class User
         attr_accessor :name, :email
         
         def initialize(attributes = {})
@@ -215,8 +215,140 @@
             @email = attributes[:email]
             # '@' makes the variable global
         end
-        
-        def
-        end
+
         
         'require' keyword
+        
+        
+        <%= >  -> return value
+        
+3/13/2017
+    Ruby Assets Pipeline - 
+        app/assets/images
+        
+    Manifest files
+        (Like how stylesheets work (application is loaded after any css file in same folder -> into giant css file)
+    
+    Preprocessing
+        renaming extensions easily
+        foobar.js.erb.coffee
+    
+    Image tag for ruby
+    <%= link_to image_tag("rails.png", alt:"Rails logo"), 'http://rubyonrails.org/'%>
+    
+    Bootstrap
+        @import "bootstrap-sprocket"; @import "bootstrap";
+        
+    Application.html.erb
+        <%= yield %>
+        Being able to do site-wide header/footer
+        
+        Partial files.  "_*.html.erb"
+        <%= render html: "layouts/*.html.erb"  #If in layouts folder will current dir is views %>
+        
+    scss
+        Extension of css
+        allows for variables -> $variable_name
+            $light_grey: #777
+    
+    Routes.rb
+        Context routes
+        DevOps
+        
+        These are the same, but the second provides another variable
+            get 'pages#help'
+            get '/help', to: 'static_pages#help'
+        
+            help_path, help_url
+            
+    Integration Tests
+    
+    |           |                   |               |
+    |   Rails   |   -   -   -   -   |   Salesforce  |
+    |           |                   |               |
+        FormSubmit |
+        
+        site_layout_test.rb
+        require 'test_helper'
+        
+        class SiteLayoutTest < ActionDispatch::IntegrationTest
+            test "layout links" do
+                get root_path
+                assert_template 'static_pages/home'
+                assert_select "a[href=?]", root_path, count:2
+                assert_select "a[href=]", help_path
+            end
+        end
+        
+    ------------------------------------------------------------------------------------        
+    Test review (7 days, monday)
+        Routes file
+            Know how to type: root route & rest-type routes
+            
+        Good reasons to/not use TDD
+        
+        Familiar with helper files
+        
+        Familar with partials ("_header.html.rb")
+        
+        Ruby
+            What is object / How Ruby treats objects / what is returned by what
+            Console - specifically loading classes
+                
+            String concat & interpolation
+            Know how to write a block
+            
+            Ruby structues -> Array, Hashes, Ranges
+            
+        Understand asset pipeline
+            path, vendor, lib
+            
+        sass format
+            brackets, variables
+            
+            
+            
+    :blah is a symbol
+    
+    blah: is a hash
+    
+    
+
+3/15/2017
+    Why use model / DB?
+        Persistence (saving data long term)
+        Memory is volatile
+    
+    need a route to the DB
+        resources :users
+        
+    "rails routes" command\
+    
+    rails generate model <name> <schema> -> creates migration file -> rails db:migrate
+        also has to be run on heroku
+        remember Ruby symbols -> :-----
+        
+    rails console --sandbox
+    
+    Add validation to the model!
+        - esp. passwords, email regex
+        
+    rails generate migration add_index -> creates migration file -> adds index to a table for an index, which will speed up searches for that attribute
+    
+    rails generate migration add_password password digest:string
+    
+    
+    make model
+    migrate
+    add validation
+    test
+    make controller
+    test
+    views
+    html
+    
+    scoped/global variables
+    
+    routes
+    
+    3rd-party libraries
