@@ -215,7 +215,7 @@
             @email = attributes[:email]
             # '@' makes the variable global
         end
-
+    end
         
         'require' keyword
         
@@ -255,7 +255,7 @@
         Context routes
         DevOps
         
-        These are the same, but the second provides another variable
+        The following are the same, but the second provides another variable
             get 'pages#help'
             get '/help', to: 'static_pages#help'
         
