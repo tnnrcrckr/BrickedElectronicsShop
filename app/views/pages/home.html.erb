@@ -1,4 +1,6 @@
 <% provide(:title, "Home") %>
+<head>
+</head>
 <body>
 	<div id="body">
 		<p class="storeTitle">
@@ -10,7 +12,14 @@
 		</p>
 		
 		<div class="featured">
-		    <h3>Try this product!</h3>
+			<div id="feat_img">
+				<!--<img id="slideshowImage" src="featured_product_1.jpg" width="250px"><a src="" alt="click to view product"></a></img>-->
+				<%= image_tag("featured_product.jpg", alt:"featured product image") %>
+				
+			</div>
+			<div id="feat_rvw">
+				
+			</div>
 			<img src="featured_ad.png" width="100%" alt="Featured Product(s)"></img>
 		    <div>Also, look at this review for this product.</div>
 		</div>

@@ -15,4 +15,9 @@ Rails.application.routes.draw do
   get 'pages/navigation'
   
   get 'pages/reviews'
+  
+  
+  get '/signup', to: 'users#new'
+  post	'/signup',	to: 'users#create'
+  resources :users
 end
