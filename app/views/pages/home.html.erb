@@ -1,7 +1,5 @@
 <% provide(:title, "Home") %>
 <head>
-	<script src="slideshow.js" type="text/javascript">
-	</script>
 </head>
 <body>
 	<div id="body">
@@ -16,10 +14,8 @@
 		<div class="featured">
 			<div id="feat_img">
 				<!--<img id="slideshowImage" src="featured_product_1.jpg" width="250px"><a src="" alt="click to view product"></a></img>-->
-				<%= image_tag("featured_product_1.jpg", alt:"feat. img", id:"slideshowImage", onload:"featured_slideshow(0)") %>
-				<script type="text/javascript">
-					//featured_slideshow(0);
-				</script>
+				<%= image_tag("featured_product.jpg", alt:"featured product image") %>
+				
 			</div>
 			<div id="feat_rvw">
 				
