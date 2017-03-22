@@ -1,0 +1,36 @@
+3/22/2017
+    Get Put Post Delete
+    
+    new Session
+        -Non persistent
+        -store user/pass
+        
+    Stateless Transactions
+        - From session to session -> no data is saved
+        
+    Cookies -> Special version of Sessions
+        - Saves info from session to session
+        - Cookies are unsecure AF -> Sessions are secure
+            -Encrypt the session -> SSL  :  HTTPS <- S
+            
+    Session controller
+    
+    
+    rails generate controller Sessions new create delete
+    
+    
+    login/out method(s) could go in a controller, but may be more useful in a helper -> SessionsHelper
+        -Helpers only available in views, but can be added to controller(s)
+                -<controller_file> :  include <Helpername>
+    
+    ||=  -> "or equals"; is similar to plus equals
+        @current_user ||= User.find_by(id: session[:user_id])
+        @current_user = User.find_by(id: session[:user_id])
+        
+    <% if logged_in? %>
+        <html - logout>
+    <% else %>
+        <html - login>
+    <% end %>
+    
+    
