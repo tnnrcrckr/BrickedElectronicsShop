@@ -15,7 +15,11 @@
 	
 	
 	<div class="header_btn">
-		<%= link_to "Login/Account", account_path, class:"header_link" %>
+		<% if @user.isLoggedIn? %>
+			<%= link_to "Account", account_path, class:"header_link"%>
+		<% else %>
+			<%= link_to "Login/Account", account_path, class:"header_link" %>
+		<% end %>
 	</div>
 	
 	
