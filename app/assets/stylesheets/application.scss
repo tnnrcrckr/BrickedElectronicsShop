@@ -1,0 +1,118 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+html {
+	font-size: large;
+	font-family: monospace;
+}
+
+body {
+	height:100%;
+	padding-top:50px;
+	margin:auto;
+	text-align: center;
+	background: #f1f1f1 url("store_bg_wide.png") repeat-x 55px 0px scroll;
+}
+a {
+	color: inherit;
+	text-decoration: underline;
+}
+
+a:hover {
+	color: #00AADD;
+	text-decoration: underline;
+}
+
+img {
+  outline: none;
+}
+
+button{
+  cursor: pointer;
+}
+
+.storeTitle {
+	font-size: 30px;
+	font-family: monospace;
+	text-decoration: overline underline;
+	color: #ad3f3f;
+	margin: 30px;
+}
+
+.storeMotto {
+	font-style: italic;
+}
+
+
+#productTable {
+  margin:auto;
+  border-collapse: collapse;
+}
+#productTable th {
+  color: black;
+  background-color: #ddd;
+}
+#productTable tr:nth-child(even) {
+  background-color: #fdfdfd;
+}
+#productTable tr:nth-child(odd) {
+  background-color: #f3f3f3;
+}
+
+header div[class="header-btnSet"]{
+  background: none;
+  
+  div{
+    display:inline;
+    padding-left: 15px;
+    margin: 3px;
+    
+    a{
+      text-decoration: none;
+      text-align: center;
+      
+    }
+    
+  }
+  
+  div:before{
+    width: 3px;
+    height: 100%;
+    left: 0;
+    -webkit-transition: height 1s ease-in;
+    transition: height 1s ease-in;
+  }
+    
+  div:after{
+    height: 3px;
+    width: 0%;
+    left: 0;
+    -webkit-transition: height 1s ease-in;
+    transition: height 1s ease-in;
+  }
+    
+  div:hover:before{
+    height: 0%;
+    -webkit-transition: height 1s ease-in;
+    transition: height 1s ease-in;
+  }
+    
+  div:hover:after{
+    width: 100%;
+    -webkit-transition: width 1s ease-in;
+    transition: width 1s ease-in;
+  }
+  
+}
