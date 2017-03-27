@@ -1,29 +1,25 @@
 <header>
-	<div class="header-btnSet">
-		
-		<div id="header_home">
-			<%= link_to image_tag("store_home.png", alt: "Home Icon", height: "15px"), root_path %>
-		</div>
-		
-		
-		<div>
-			<%= link_to "Product Search", shop_path %>
-		</div>
-		
-		
-		<div>
-			<%= link_to "Reviews", reviews_path %>
-		</div>
-		
-		
-		<div>
-			<%= link_to "Login/Account", account_path %>
-		</div>
-		
-		
-		<div id="header_cart">
-			<%= link_to image_tag("store_cart.png", alt:"Shopping Cart Icon", height:"15px"), '#' %>
-		</div>
-		
+	<div id="header_home" class="header_btn">
+		<%= link_to image_tag("store_home.png", alt: "Home Icon", height: "15px"), root_path, class:"header_link" %>
+	</div>
+	
+	
+	<div class="header_btn">
+		<%= link_to "Product Search", shop_path, class:"header_link" %>
+	</div>
+	
+	
+	<div class="header_btn">
+		<%= link_to "Reviews", reviews_path, class:"header_link" %>
+	</div>
+	
+	
+	<div class="header_btn">
+		<%= link_to "Login/Account", account_path, class:"header_link" %>
+	</div>
+	
+	
+	<div id="header_cart" class="header_btn">
+		<%= link_to image_tag("store_cart.png", alt:"Shopping Cart Icon", height:"15px"), '#', class:"header_link" %>
 	</div>
 </header>
