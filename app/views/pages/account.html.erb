@@ -1,3 +1,8 @@
+<head>
+    <script type="javascript/text" src="account_page.js">
+         
+    </script>
+</head>
 <% provide(:title, "Account") %>
 <br>
 
@@ -7,13 +12,34 @@
 
 <br>
 
+
 <div>
-    You must login/register before you can view this stuff.
+    
 </div>
 
-<br>
+<div class="acc_form" style="display:inherit">
+    <span>You must login/register to use this webpage.</span>
+    <div id="account_form" class ="container">
+        <header>
+            <div class="acc_form_btn_outline">
+                <button class="form_head_btn" id="btn_login" onclick="toggle_acc_form()">Log In</button>
+            </div>
+            <div class="acc_form_btn_outline">
+                <button class="form_head_btn" id="btn_register" onclick="toggle_acc_form()">Register</button>
+            </div>
+        </header>
+        <body>
+            <div id="acc_form_login" style="display:hidden;">login
+                <%# form_for User.login %>
+            </div>
+            <div id="acc_form_new" style="display:hidden;">new user
+                <%#.for form_for User.new %>
+            </div>
+        </body>
+    </div>
+</div>
 
-<div>
+<div class="account_info" style="display:hidden;">
     On this page, you'll be able to manage information about your account.
 </div>
 

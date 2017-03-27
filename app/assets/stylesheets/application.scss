@@ -40,43 +40,17 @@ a {
 
 img {
   outline: none;
+  border: none;
 }
 
 button{
   cursor: pointer;
 }
 
-.storeTitle {
-	font-size: 30px;
-	font-family: monospace;
-	text-decoration: overline underline;
-	color: #ad3f3f;
-	margin: 30px;
-}
-
-.storeMotto {
-	font-style: italic;
-}
-
-
-#productTable {
-  margin:auto;
-  border-collapse: collapse;
-}
-#productTable th {
-  color: black;
-  background-color: #ddd;
-}
-#productTable tr:nth-child(even) {
-  background-color: #fdfdfd;
-}
-#productTable tr:nth-child(odd) {
-  background-color: #f3f3f3;
-}
-
 header{
   display: block;
   margin-top: 10px;
+  margin-bottom: 15px;
 }
 
 header div{

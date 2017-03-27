@@ -7,4 +7,17 @@ class User < ApplicationRecord
         
     has_secure_password
     validates :password, presence: true, length: {minimum: 10}
+    
+    
+    attr_accessor :name, :email
+
+  def initialize(attributes = {})
+    @name  = attributes[:name]
+    @email = attributes[:email]
+  end
+
+  def formatted_email
+    "#{@name} <#{@email}>"
+  end
+  
 end

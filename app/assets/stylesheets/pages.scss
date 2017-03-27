@@ -10,3 +10,70 @@
 a:hover{
     @include hyperlink_hover;
 }
+
+.container{
+    display: block;
+    width: auto;
+    padding: 10px;
+    margin-left: 25%;
+    margin-right: 25%;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background: #eee;
+}
+
+.storeTitle {
+	font-size: 30px;
+	font-family: monospace;
+	text-decoration: overline underline;
+	color: #ad3f3f;
+	margin: 30px;
+}
+
+.storeMotto {
+	font-style: italic;
+}
+
+
+#productTable {
+  margin:auto;
+  border-collapse: collapse;
+}
+#productTable th {
+  color: black;
+  background-color: #ddd;
+}
+#productTable tr:nth-child(even) {
+  background-color: #fdfdfd;
+}
+#productTable tr:nth-child(odd) {
+  background-color: #f3f3f3;
+}
+
+
+/*  Account Page  */
+.account_form .form_head_btn{
+    display: block;
+}
+.acc_form_btn_outline{
+    display: inline;
+}
+
+.form_head_btn {
+    display: inline;
+    background: transparent;
+    border: 3px #3e3 solid;
+    padding: 10px;
+    margin: none;
+    
+    -webkit-transition: background 0.5s ease;
+}
+.form_head_btn:hover {
+    background: #3e3;
+    
+    -webkit-transition: background 0.5s ease;
+}
+
+
+
+/*    */
