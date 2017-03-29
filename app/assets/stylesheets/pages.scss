@@ -15,19 +15,26 @@ a:hover{
     display: block;
     width: auto;
     padding: 10px;
-    margin-left: 25%;
-    margin-right: 25%;
+    margin-left: 15%;
+    margin-right: 15%;
     border: 1px solid #ddd;
     border-radius: 10px;
     background: #eee;
 }
 
-.storeTitle {
+#storeTitle {
 	font-size: 30px;
 	font-family: monospace;
 	text-decoration: overline underline;
 	color: #ad3f3f;
-	margin: 30px;
+	margin: 1.2em;
+}
+
+.storeTitle {
+	font-size: 30px;
+	font-family: monospace;
+	color: #ad3f3f;
+	margin: 1.2em;
 }
 
 .storeMotto {
