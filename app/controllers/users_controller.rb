@@ -18,6 +18,15 @@ class UsersController < ApplicationController
     end
   end
 
+  def login
+  
+    if @user.valid
+      flash[:success] = "Logged in successfully"
+    else
+      flash[:failure] = "Logged in successfully"
+    end
+  end
+  
   private
   
     def user_params
