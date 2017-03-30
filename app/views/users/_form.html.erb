@@ -1,0 +1,43 @@
+<% flash[:warning] = "You must login/register to utilize this webpage." %>
+<div id="account_form">
+    <header>
+        <div class="acc_form_btn_outline">
+            <button class="form_head_btn" id="btn_login" onclick="toggle(acc_form_new, 0); toggle(acc_form_login, 1);">Log In</button>
+        </div>
+        <div class="acc_form_btn_outline">
+            <button class="form_head_btn" id="btn_register" onclick="toggle(acc_form_login, 0); toggle(acc_form_new, 1);">Register</button>
+        </div>
+    </header>
+    <body>
+        <div id="acc_form_login" style="display:none;">login
+            
+            <%= form_for(@user) do |f| %>
+              <%= f.label :email %>
+              <%= f.email_field :email %>
+        
+              <%= f.label :password %>
+              <%= f.password_field :password %>
+        
+              <%= f.submit "Submit", class: "btn btn-primary" %>
+            <% end %>
+            
+        </div>
+        <div id="acc_form_new" style="display:none;">new user
+            <%= form_for(@user) do |f| %>
+              <%= f.label :name %>
+              <%= f.text_field :name %>
+        
+              <%= f.label :email %>
+              <%= f.email_field :email %>
+        
+              <%= f.label :password %>
+              <%= f.password_field :password %>
+        
+              <%= f.label :password_confirmation, "Confirmation" %>
+              <%= f.password_field :password_confirmation %>
+        
+              <%= f.submit "Submit", class: "btn btn-primary" %>
+            <% end %>
+        </div>
+    </body>
+</div>

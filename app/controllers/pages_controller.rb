@@ -10,8 +10,4 @@ class PagesController < ApplicationController
   def shop
     render file: "pages/shop.html.erb"
   end
-
-  def account
-    render file: "pages/account.html.erb"
-  end
 end

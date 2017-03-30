@@ -1,0 +1,25 @@
+
+<% provide(:title, "Account") %>
+
+<div>
+    <p class="storeTitle">Account Page</p>
+</div>
+
+<div>
+    
+</div>
+
+<div class=container>
+<%=
+    unless(@user.nil?)
+        #if(User.find(1))
+        if(User.find(@user.id))
+            render "users/manage"
+        else
+            render "users/form"
+        end
+    else
+        render "users/form"
+    end
+%>
+</div>

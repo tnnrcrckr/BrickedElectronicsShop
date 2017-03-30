@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   def new
     @user = User.new
   end
-  
+    
   def show
     @user = User.find(params[:id])
   end
@@ -18,18 +18,24 @@ class UsersController < ApplicationController
     end
   end
 
+
+  def account
+    render file: "users/account.html.erb"
+  end
+  
   def login
   
     if @user.valid
       flash[:success] = "Logged in successfully"
     else
-      flash[:failure] = "Logged in successfully"
+      flash[:failure] = "Login failed"
     end
   end
   
   private
   
     def user_params
-      params.require("user").permit(:name, :email)
+      params.require(:user).permit(:name, :email, :password,
+                                   :password_confirmation)
     end
 end
