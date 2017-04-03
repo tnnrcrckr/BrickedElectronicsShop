@@ -18,13 +18,9 @@ class UsersController < ApplicationController
     end
   end
 
-
-  def account
-    render file: "users/account.html.erb"
-  end
   
   def login
-  
+    @user = User.find(user.user_params[:id])
     if @user.valid
       flash[:success] = "Logged in successfully"
     else

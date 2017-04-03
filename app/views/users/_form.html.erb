@@ -1,42 +1,56 @@
-<% flash[:warning] = "You must login/register to utilize this webpage." %>
 <div id="account_form">
     <header>
         <div class="acc_form_btn_outline">
-            <button class="form_head_btn" id="btn_login" onclick="toggle(acc_form_new, 0); toggle(acc_form_login, 1);">Log In</button>
+            <button class="form_head_btn" id="btn_login" onclick="formButtonBackgrounds(btn_signup, 0); formButtonBackgrounds(btn_login, 1); toggle(signup_form, 0); toggle(login_form, 1);">Log In</button>
         </div>
         <div class="acc_form_btn_outline">
-            <button class="form_head_btn" id="btn_register" onclick="toggle(acc_form_login, 0); toggle(acc_form_new, 1);">Register</button>
+            <button class="form_head_btn" id="btn_signup" onclick="formButtonBackgrounds(btn_login, 0); formButtonBackgrounds(btn_signup, 1); toggle(login_form, 0); toggle(signup_form, 1);">Register</button>
         </div>
     </header>
     <body>
-        <div id="acc_form_login" style="display:none;">login
+        <div id="login_form" style="display:none;">
             
-            <%= form_for(@user) do |f| %>
-              <%= f.label :email %>
-              <%= f.email_field :email %>
-        
-              <%= f.label :password %>
-              <%= f.password_field :password %>
-        
-              <%= f.submit "Submit", class: "btn btn-primary" %>
+            <%#= form_for("/login", :url => {:action => "/login"}) do |f| %>
+            <%#= form_for(@user) do |f| %>
+            <%= form_for(login_url) do |f|%>
+                <%= render 'shared/error_messages' %>
+                <div>
+                    <%= f.label :email %>
+                    <%= f.email_field :email, alt: "Email"%>
+                </div>
+                <div>
+                    <%= f.label :password %>
+                    <%= f.password_field :password %>
+                </div>
+                <div>
+                    <%= f.submit "Submit", class: "btn btn-primary" %>
+                </div>
             <% end %>
             
         </div>
-        <div id="acc_form_new" style="display:none;">new user
-            <%= form_for(@user) do |f| %>
-              <%= f.label :name %>
-              <%= f.text_field :name %>
-        
-              <%= f.label :email %>
-              <%= f.email_field :email %>
-        
-              <%= f.label :password %>
-              <%= f.password_field :password %>
-        
-              <%= f.label :password_confirmation, "Confirmation" %>
-              <%= f.password_field :password_confirmation %>
-        
-              <%= f.submit "Submit", class: "btn btn-primary" %>
+        <div id="signup_form" style="display:none;">
+            <%= form_for("users#new") do |f| %>
+                <%= render 'shared/error_messages' %>
+                <div>
+                    <%= f.label :name %>
+                    <%= f.text_field :name %>
+                </div>
+                <div>
+                    <%= f.label :email %>
+                    <%= f.email_field :email %>
+                </div>
+                <div>
+                    <%= f.label :password %>
+                    <%= f.password_field :password %>
+                </div>
+                <div>
+                    <%= f.label :password_confirmation, "Confirmation" %>
+                    <%= f.password_field :password_confirmation, alt: "Confirmation" %>
+                </div>
+                
+                <div>
+                    <%= f.submit "Submit", class: "btn btn-primary" %>
+                </div>
             <% end %>
         </div>
     </body>

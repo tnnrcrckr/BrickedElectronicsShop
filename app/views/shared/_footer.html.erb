@@ -1,8 +1,5 @@
 <footer>
-    <%= if Rails.env.development? 
-            render "shared/debugger"
-        end
-    %>
+    <%= render "shared/debugger" if Rails.env.development? %>
     
 	<p><%= link_to "Site Map", navigation_path%> &#9|&#9 Created by Tanner Crocker &#9|&#9 Like what you see? <%= link_to "Contact Me", "mailto:tec@email.uscupstate.edu" %></p>
 </footer>
