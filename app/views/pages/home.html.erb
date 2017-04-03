@@ -1,38 +1,16 @@
 <% provide(:title, "Home") %>
-<head>
-</head>
-<body>
-	<div id="body">
-		<p id="storeTitle">
-			Bricked Electronics Shop
-		</p>
-		
-		<div class="container"></div>
-		
-			<p class="storeMotto">
-				You brick it, we fix it!
-			</p>
-		
-			<div id="feat_img">
-				<%= image_tag("featured_product.jpg", alt:"featured product image") %>
-			
-			</div>
-			<div class="featured-review">
-				
-			</div>
-		</div>
-		
-		<div class="userReviews">
-			<ul class="reviewList" style="padding:0px;">
-			    
-			</ul>
-		</div>
-		
-		<script>
-			// for(i = 100; i > 0; i--)
-			// 	document.write(i + "<br>");
-		</script>
-	</div>
-</body>
-</html>
+<div class="jumobtron">
+	<h1>Bricked Electronics Shop</h1>
+	<h2>Not your average Lego&trade; store</h2>
+</div>
 
+<div class="container-fluid"></div>
+
+	<%#= Get a random featured product %>
+	<%= #Get the image of the PID
+		image_tag("featured_product.jpg", alt:"featured product image", class: "img-responsive center-block") %>
+	
+	 <%= #Get the review for the product 
+	 	content_tag(:h3, "Featured Review", class: "center")
+	 %>
+</div>

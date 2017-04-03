@@ -11,8 +11,9 @@ Rails.application.routes.draw do
   
   
   get '/account', to: 'users#account'
-  get  '/signup',  to: 'users#new'
+  get  '/signup',  to: 'users#account'
   post '/signup',  to: 'users#create'
+  get '/login', to: 'users#account'
   post '/login', to: 'users#login'
   
   resources :users

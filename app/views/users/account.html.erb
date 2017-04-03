@@ -7,15 +7,11 @@
 
 <div class=container>
 <%=
-    unless(@user.nil?)
-        #if(User.find(1))
-        if(User.find(@user.id))
-            render "users/manage"
-        else
-            render "users/form"
-        end
-    else
+    #Disabled until Sessions are made
+    #if(current_User.nil?)
         render "users/form"
-    end
+    #else
+        #render "users/manage"
+    #end
 %>
 </div>

@@ -1,5 +1,11 @@
 <footer>
-    <%= render "shared/debugger" if Rails.env.development? %>
-    
-	<p><%= link_to "Site Map", navigation_path%> &#9|&#9 Created by Tanner Crocker &#9|&#9 Like what you see? <%= link_to "Contact Me", "mailto:tec@email.uscupstate.edu" %></p>
+    <%#= render "shared/debugger" if Rails.env.development? %>
+    <nav class="navbar navbar-inverse">
+        <ul class="navbar-nav navbar-right" style="margin-right:10px">
+    		<li><%= link_to "Navigation", navigation_path, class:"navbar-link" %></li>
+    		<li><%= link_to "About", about_path, class:"navbar-link" %></li>
+    		<li><%= link_to "Help", help_path, class:"navbar-link" %></li>
+            <li><%= link_to "Contact", contact_path, class:"navbar-link" %></li>
+        </ul>
+    </nav>
 </footer>

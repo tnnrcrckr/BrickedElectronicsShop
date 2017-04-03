@@ -1,57 +1,55 @@
-<div id="account_form">
-    <header>
-        <div class="acc_form_btn_outline">
-            <button class="form_head_btn" id="btn_login" onclick="formButtonBackgrounds(btn_signup, 0); formButtonBackgrounds(btn_login, 1); toggle(signup_form, 0); toggle(login_form, 1);">Log In</button>
-        </div>
-        <div class="acc_form_btn_outline">
-            <button class="form_head_btn" id="btn_signup" onclick="formButtonBackgrounds(btn_login, 0); formButtonBackgrounds(btn_signup, 1); toggle(login_form, 0); toggle(signup_form, 1);">Register</button>
-        </div>
-    </header>
-    <body>
-        <div id="login_form" style="display:none;">
+<div id="account_form" class="container">
+    <div id="account_form_buttons" class="btn-group">
+        <button class="btn btn-primary" id="btn_login" onclick="toggle(signup_form, 0); toggle(login_form, 1);">Log In</button>
+        <button class="btn btn-info" id="btn_signup" onclick="toggle(login_form, 0); toggle(signup_form, 1);">Register</button>
+    </div>
+          
+      
+    <div id="login_form" class="">
+        
+        <%#= form_for("/login", :url => {:action => "/login"}) do |f| %>
+        <%#= form_for(@user) do |f| %>
+        <%= form_for(login_url, url: login_url, method: :post) do |f|%>
+            <%#= render 'shared/error_messages' %>
+            <div class="form-group">
+                <%= f.label :email, class: "control-label" %>
+                <%= f.email_field :email, class: "form-control" %>
+            </div>
+            <div class="form-group">
+                <%= f.label :password, class: "control-label" %>
+                <%= f.password_field :password, class: "form-control" %>
+            </div>
+            <div>
+                <%= f.submit "Submit", class: "btn btn-success" %>
+            </div>
+        <% end %>
+        
+    </div>
+    <div id="signup_form" style="display:none; margin-bottom: 15px;">
+        <%#= form_for(signup_url, url: signup_url, method: :post) do |f| %>
+        <%= form_for(@user, url: new_user_url) do |f| %>
+            <%#= render 'shared/error_messages' %>
+            <div class="form-group">
+                <%= f.label :name, class: "control-label" %>
+                <%= f.text_field :name, class: "form-control" %>
+            </div>
+            <div class="form-group">
+                <%= f.label :email, class: "control-label" %>
+                <%= f.email_field :email, class: "form-control" %>
+            </div>
+            <div class="form-group">
+                <%= f.label :password, class: "control-label" %>
+                <%= f.password_field :password, class: "form-control" %>
+            </div>
+            <div class="form-group">
+                <%= f.label :password_confirmation, "Confirmation", class: "control-label" %>
+                <%= f.password_field :password_confirmation, class: "form-control" %>
+            </div>
             
-            <%#= form_for("/login", :url => {:action => "/login"}) do |f| %>
-            <%#= form_for(@user) do |f| %>
-            <%= form_for(login_url) do |f|%>
-                <%= render 'shared/error_messages' %>
-                <div>
-                    <%= f.label :email %>
-                    <%= f.email_field :email, alt: "Email"%>
-                </div>
-                <div>
-                    <%= f.label :password %>
-                    <%= f.password_field :password %>
-                </div>
-                <div>
-                    <%= f.submit "Submit", class: "btn btn-primary" %>
-                </div>
-            <% end %>
-            
-        </div>
-        <div id="signup_form" style="display:none;">
-            <%= form_for("users#new") do |f| %>
-                <%= render 'shared/error_messages' %>
-                <div>
-                    <%= f.label :name %>
-                    <%= f.text_field :name %>
-                </div>
-                <div>
-                    <%= f.label :email %>
-                    <%= f.email_field :email %>
-                </div>
-                <div>
-                    <%= f.label :password %>
-                    <%= f.password_field :password %>
-                </div>
-                <div>
-                    <%= f.label :password_confirmation, "Confirmation" %>
-                    <%= f.password_field :password_confirmation, alt: "Confirmation" %>
-                </div>
-                
-                <div>
-                    <%= f.submit "Submit", class: "btn btn-primary" %>
-                </div>
-            <% end %>
-        </div>
-    </body>
+            <div >
+                <%= f.submit "Submit", class: "btn btn-success" %>
+            </div>
+        <% end %>
+    </div>
+        
 </div>

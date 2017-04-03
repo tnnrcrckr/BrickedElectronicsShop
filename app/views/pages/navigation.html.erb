@@ -1,17 +1,33 @@
 <% provide(:title, "Site Map") %>
-
-<div>
-    <p class="storeTitle">Navigation Page</p>
-</div>
-
-<div style="margin-top:2em; margin-bottom:2em;">
-    <ul style="list-style-type:none;">
-        <span style="text-decoration:underline; margin-bottom:0.5em">Links to all pages of this site</span>
-        <li style="margin-bottom:0.5em;"><a style="text-decoration:none;" href=<%= about_url %>>About</a></li>
-        <li style="margin-bottom:0.5em;"><a style="text-decoration:none;" href=<%= account_url %>>Account</a></li>
-        <li style="margin-bottom:0.5em;"><a style="text-decoration:none;" href=<%= shop_url %>>Shop</a></li>
-        <li style="margin-bottom:0.5em;"><a style="text-decoration:none;" href=<%= help_url %>>Help</a></li>
-        <li style="margin-bottom:0.5em;"><a style="text-decoration:none;" href=<%= root_url %>>Home</a></li>
-        <li style="margin-bottom:0.5em;"><a style="text-decoration:none;" href=<%= reviews_url %>>Reviews</a></li>
-    </ul>
+<div class="jumobtron page-header">
+    <h1>Navigation Page</h1>
+    <h2>
+        <ul style="list-style-type:none;">
+            <span style="text-decoration:underline; margin-bottom:5px">Links to all pages of this site</span>
+            
+            <li style="margin-bottom:5px;">
+                <%= link_to "About Bricked Electronics", about_url %>
+            </li>
+            <li style="margin-bottom:5px;">
+                <%= link_to "Contact Us", contact_url %>
+            </li>
+            <li style="margin-bottom:5px;">
+                <%= link_to "Help", help_url %>
+            </li>
+            <li style="margin-bottom:5px;">
+                <%= link_to "Homepage", root_url %>
+            </li>
+            <li style="margin-bottom:5px;">
+                <%= link_to "Manage My Account", account_url %>
+            </li>
+            <li style="margin-bottom:5px;">
+                <%= link_to "Product Reviews", reviews_url %>
+            </li>
+            <li style="margin-bottom:5px;">
+                <%= link_to "Product Search", shop_url %>
+            </li>
+        </ul>
+        
+        
+    </h2>
 </div>
