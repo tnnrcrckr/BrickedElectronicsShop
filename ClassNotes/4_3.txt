@@ -1,0 +1,46 @@
+Microposts (aka User posts)
+    id          int
+    content     text
+    user_id     int
+    (product_id int)
+    created_at  int
+    updated_at  int
+    
+Indexes will speed up searches
+    index the user_id (and product_id)
+    
+rails generate model Review content:text User:reference Product:reference
+    #MODEL -> models are singular, controllers are plural
+    
+    generates the migration file
+    
+When creating new review, go through user model to create a review
+
+
+default_scope -> { order(created_at: :desc) }
+    When pulling reviews from DB,
+    View says I want this -> Controller says I want this to Model -> Modell fetches from DB and rets to Controller, who rets to View
+    -> 'stabby lambda' (Anonymous function)
+        takes a block, returns a proc -> Can chain: "ex.: '--- -> { --- } .all' "
+        
+        
+rails generate controller Reviews
+
+    
+config/routes.rb  ===   rails routes
+    
+    resources :reviews, only[:create, :destroy]
+    
+reviews_controller
+    show
+        paginate
+            creates pages with associated numbers
+    
+rails db:migrate:reset
+    drops all DATA from db tables
+    
+rails db:seed
+    seeds the db tables -> generates data
+    
+    
+AGILE Rails -> (don't buy it, but it shows how to do the shopping cart)
