@@ -10,14 +10,12 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      log_in @user
       flash[:success] = "Welcome to Bricked Electronics"
       redirect_to @user
     else
-      render 'new'
+      render 'account'
     end
   end
-
   
   def login
     @user = User.find(user.user_params[:id])
@@ -28,6 +26,9 @@ class UsersController < ApplicationController
     end
   end
   
+  def account
+    new
+  end
   private
   
     def user_params
