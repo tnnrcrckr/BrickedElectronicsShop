@@ -8,9 +8,9 @@
 <div class=container>
 <%=
     if(logged_in?)
-        render "users/form"
+        redirect_to users_path
     else
-        render "users/manage"
+        render "users/form"
     end
 %>
 </div>
