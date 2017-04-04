@@ -1,8 +1,12 @@
-
 <% provide(:title, "Account") %>
-
-<div>
-    <p class="storeTitle">Account Page</p>
+<div class="jumobtron">
+    <h1 id="acc_h1">
+        <%= if logged_in?
+                "Account Page"
+            else 
+                "Login Page"
+            end %>
+        </h1>
 </div>
 
 <div class=container>
