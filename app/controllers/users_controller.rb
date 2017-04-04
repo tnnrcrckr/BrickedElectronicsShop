@@ -15,12 +15,8 @@ class UsersController < ApplicationController
       flash[:success] = "Welcome to Bricked Electronics"
       redirect_to @user
     else
-      render 'account'
+      render 'new'
     end
-  end
-  
-  def account
-    new
   end
   
   private

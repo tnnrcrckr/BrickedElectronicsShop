@@ -1,4 +1,14 @@
-<% provide(:title, "New Session") %>
-<div class="jumobtron page-header">
-    <h1>New Session</h1>
+<% provide(:title, "Login") %>
+<div class="jumobtron">
+    <h1>Login</h1>
+    <%= render 'shared/flash' %>
+</div>
+
+<div class=container>
+    <% if(logged_in?) %>
+        <%= redirect_to user_path %>
+    <% else %>
+        <%= render "users/login_form" %>
+        <p>New user? <%= link_to "Sign up now!", signup_path %></p>
+    <% end %>
 </div>
