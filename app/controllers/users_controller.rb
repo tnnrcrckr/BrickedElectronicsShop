@@ -18,15 +18,6 @@ class UsersController < ApplicationController
     end
   end
   
-  def login
-    @user = User.find(user.user_params[:id])
-    if @user.valid
-      flash[:success] = "Logged in successfully"
-    else
-      flash[:failure] = "Login failed"
-    end
-  end
-  
   def account
     new
   end

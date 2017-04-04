@@ -7,11 +7,10 @@
 
 <div class=container>
 <%=
-    #Disabled until Sessions are made
-    #if(current_User.nil?)
+    if(logged_in?)
         render "users/form"
-    #else
-        #render "users/manage"
-    #end
+    else
+        render "users/manage"
+    end
 %>
 </div>

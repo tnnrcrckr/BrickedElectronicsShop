@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'sessions/new'
+
   root "pages#home"
   
   get '/help', to: 'pages#help'
@@ -9,12 +11,13 @@ Rails.application.routes.draw do
   get '/reviews', to: 'pages#reviews'
   get '/contact', to: 'pages#contact'
   
+  get    '/login',   to: 'sessions#new'
+  post   '/login',   to: 'sessions#create'
+  delete '/logout',  to: 'sessions#destroy'
   
   get '/account', to: 'users#account'
   get  '/signup',  to: 'users#account'
   post '/signup',  to: 'users#create'
-  get '/login', to: 'users#account'
-  post '/login', to: 'users#login'
   
   resources :users
 end
