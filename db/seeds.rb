@@ -5,18 +5,31 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+User.create!(name:  "Tanner Crocker",
+             email: "tec@email.uscupstate.edu",
+             password:              "foobarbin",
+             password_confirmation: "foobarbin",
+             admin:     true,
+             activated: true,
+             activated_at: Time.zone.now)
+
 User.create!(name:  "Example User",
              email: "example@railstutorial.org",
              password:              "foobarboo",
              password_confirmation: "foobarboo",
-             admin: true)
+             admin:     true,
+             activated: true,
+             activated_at: Time.zone.now)
 
-99.times do |n|
+98.times do |n|
   name  = Faker::Name.name
   email = "example-#{n+1}@railstutorial.org"
   password = "foobarboo"
   User.create!(name:  name,
                email: email,
                password:              password,
-               password_confirmation: password)
+               password_confirmation: password,
+               activated: true,
+               activated_at: Time.zone.now)
+   puts("Seeding...") if n % 25 == 0
 end
