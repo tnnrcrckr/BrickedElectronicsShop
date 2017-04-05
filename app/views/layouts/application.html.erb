@@ -12,6 +12,7 @@
 	<%= render "shared/header" %>
 	
 	<div id="app_container">
+	    <%= render 'shared/flash' if params[:controller] == "pages"%>
 	    <%= yield %>
 	</div>
 	

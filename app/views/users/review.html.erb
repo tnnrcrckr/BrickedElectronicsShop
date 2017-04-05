@@ -1,12 +1,12 @@
-<% provide(:title, 'My Reviews') %>
+<% provide(:title, 'Write Review') %>
 <div class="container">
   <div class="row">
     <%= render 'users/sidebar' %>
     
     <div class="col-md-8 col-offset-md-3">
+      <h1>Write a Review</h1>
       <%= render 'shared/flash' %>
-      <h1>Your Reviews</h1>
-      <%#= @user.microposts %>
+      <%= render 'review_form' %>
     </div>
     
   </div>

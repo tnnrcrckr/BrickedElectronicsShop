@@ -23,12 +23,6 @@ class PagesControllerTest < ActionDispatch::IntegrationTest
     assert_select "title", "Shop | #{@appTitle}"
   end
 
-  test "should get account" do
-    get account_url
-    assert_response :success
-    assert_select "title", "Account | #{@appTitle}"
-  end
-
   test "should get about" do
     get about_url
     assert_response :success

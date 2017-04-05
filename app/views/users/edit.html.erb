@@ -1,13 +1,27 @@
-<% provide(:title, 'Modify ' + @user.name) %>
+<% provide(:title, 'Modify Account') %>
 <div class="container">
   <div class="row">
-    <aside class="col-md-4">
-      <section class="user_info">
-        <h3>
-          <%= gravatar_for @user %>
-          <%= @user.name %>
-        </h3>
-      </section>
-    </aside>
+    <%= render 'users/sidebar' %>
+    
+    <div class="col-md-8 col-offset-md-3">
+      <%= render 'shared/flash' %>
+      <h1>Update Profile</h1>
+      
+      <%= form_for(@user) do |f| %>
+        <%= render 'shared/error_messages' %>
+  
+        <%= f.label :name %>
+        <%= f.text_field :name, class: 'form-control' %>
+  
+        <%= f.label :email %>
+        <%= f.email_field :email, class: 'form-control' %>
+  
+        <%= f.label :password %>
+        <%= f.password_field :password, class: 'form-control' %>
+  
+        <%= f.submit "Save changes", class: "btn btn-success" %>
+      <% end %>
+    </div>
+    
   </div>
 </div>

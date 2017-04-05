@@ -1,0 +1,23 @@
+<aside class="col-md-3">
+  <section class="user_info">
+    <h4>
+      <%= gravatar_for @user %>
+      <%= @user.name %>
+    </h4>
+    <h5><a href="http://gravatar.com/emails" target="_blank" resl="noopener">change gravatar</a></h5>
+  </section>
+  <div class="user_ops">
+    <h4>
+      <%= link_to "Write Product Review", '#' unless params[:action] == "review" %>
+    </h4>
+    <h4>
+      <%= link_to "My Reviews", user_path unless params[:action] == "show" %>
+    </h4>
+    <h4>
+      <%= link_to "Edit Account", edit_user_path(current_user) unless params[:action] == "edit" %>
+    </h4>
+    <h4>
+      <%= link_to "Log out", logout_path, method: "delete" %>
+    </h4>
+  </div>
+</aside>
