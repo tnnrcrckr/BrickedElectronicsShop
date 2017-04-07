@@ -17,9 +17,11 @@
             <li style="margin-bottom:5px;">
                 <%= link_to "Homepage", root_url %>
             </li>
+            <% if logged_in? %>
             <li style="margin-bottom:5px;">
-                <%= link_to "Manage My Account", '#' %>
+                <%= link_to "Manage My Account", current_user %>
             </li>
+            <% end %>
             <li style="margin-bottom:5px;">
                 <%= link_to "Product Reviews", reviews_url %>
             </li>
