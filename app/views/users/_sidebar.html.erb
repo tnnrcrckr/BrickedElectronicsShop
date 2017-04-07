@@ -7,6 +7,7 @@
     <h5><a href="http://gravatar.com/emails" target="_blank" resl="noopener">change gravatar</a></h5>
   </section>
   <div class="user_ops">
+    <% if current_user? @user %>
     <h4>
       <%= link_to "Write Product Review", '#' unless params[:action] == "review" %>
     </h4>
@@ -19,5 +20,22 @@
     <h4>
       <%= link_to "Log out", logout_path, method: "delete" %>
     </h4>
+    <div class="container">
+      <h5>
+        <%= link_to "Delete Account", @user, method: :delete, data: { confirm: "Are you sure you want to delete your account?" } %>
+      </h5>
+    </div>
+    <% else %>
+      <h4>
+        <%= mail_to @user.email, "Contact #{@user.name}" %>
+      </h4>
+      <% if current_user.admin? %>
+        <div class="container">
+          <h5>
+           <%= link_to "Delete Their Account", @user, method: :delete, data: { confirm: "You are sure you want to delete #{@user.name}'s account?" } %>
+          </h5>
+        </div>
+      <% end %>
+    <% end %>
   </div>
 </aside>
