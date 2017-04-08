@@ -174,20 +174,28 @@ aside {
 
 /* users index */
 #users_index{ li{ 
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
   .user_info{
-    padding: 20px 0 10px 0;
+    padding-bottom: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: auto;
+    margin-right: auto;
     border-bottom: 3px #666 solid;
-      
-    -moz-transition: margin 0.5s ease;
-    -webkit-transition: margin 0.5s ease;
-    transition: margin 0.5s ease;
+    
+      -moz-transition: margin-top 0.5s ease, margin-bottom 0.5s ease;
+      -webkit-transition:  margin-top 0.5s ease, margin-bottom 0.5s ease;
+      transition: margin-top 0.5s ease, margin-bottom 0.5s ease;
     
     &:hover{
-      margin: 10px 0;
+      margin-top: 20px;
+      margin-bottom: 20px;
       
-      -moz-transition: margin 0.5s ease;
-      -webkit-transition: margin 0.5s ease;
-      transition: margin 0.5s ease;
+      -moz-transition: margin-top 0.5s ease, margin-bottom 0.5s ease;
+      -webkit-transition:  margin-top 0.5s ease, margin-bottom 0.5s ease;
+      transition: margin-top 0.5s ease, margin-bottom 0.5s ease;
     }
   } 
 } }

@@ -4,7 +4,7 @@
   <h4>
     <%= link_to user.name, user %>
   </h4>
-  <h6 class="col-offset-sm-2 delete_h">
+  <h6 class="delete_h">
     <% if current_user.admin? && !current_user?(user) %>
       <%= link_to "delete", user, method: :delete, data: { confirm: "You are sure you want to delete #{user.name}'s account?" } %>
     <% elsif current_user?(user) %>
