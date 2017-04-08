@@ -14,3 +14,21 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+function toggleCart(){
+    var sty = document.getElementById("cart").style;
+    var blur = document.getElementById("cart_blur").style;
+    
+    if(sty.display == "none")
+    {
+        sty.display = "block";
+        blur.display = "block";
+    }
+    else
+    {
+        sty.display = "none";
+        blur.display = "none";
+    }
+        
+    return
+}
