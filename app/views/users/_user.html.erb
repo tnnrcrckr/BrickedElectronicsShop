@@ -1,10 +1,10 @@
 <li>
-  <section class="user_info">
+  <section class="user_info delete_acc">
   <%= gravatar_for user, size: 60 %>
   <h4>
     <%= link_to user.name, user %>
   </h4>
-  <h6 class="col-offset-sm-2">
+  <h6 class="col-offset-sm-2 delete_h">
     <% if current_user.admin? && !current_user?(user) %>
       <%= link_to "delete", user, method: :delete, data: { confirm: "You are sure you want to delete #{user.name}'s account?" } %>
     <% elsif current_user?(user) %>

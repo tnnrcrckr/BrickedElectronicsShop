@@ -148,6 +148,30 @@ aside {
   }
 }
 
+/* delete @user link */
+.delete_acc{
+  margin-top: 5%;
+  
+  .delete_h{
+    a{
+      background-color: transparent;
+      border: 3px #0ff transparent;
+      
+      text-decoration: none;
+      
+      transition: border 0.25s ease-in, color 1s ease-in, background-color 0.5s ease-out;
+    }
+    
+    a:hover{
+      background-color: #f00;
+      color: #fff;
+      border: 5px #f00 solid;
+      
+      transition: border 0.25s ease-out, color 1s ease-out, background-color 0.5s ease-in;
+    }
+  }
+}
+
 /* users index */
 #users_index{ li{ 
   .user_info{
