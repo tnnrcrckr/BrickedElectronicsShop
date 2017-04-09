@@ -1,35 +1,32 @@
 <% provide(:title, "Site Map") %>
 <div class="jumobtron">
     <h1>Navigation Page</h1>
-    <h2>
-        <ul style="list-style-type:none;">
-            <span style="text-decoration:underline; margin-bottom:5px">Links to all pages of this site</span>
-            
-            <li style="margin-bottom:5px;">
+    <h2>Links to all pages of this site</h2>
+    <h4>
+        <ul style="padding-left: 0; list-style:none;" class="align-left text-center">
+            <li style="margin-bottom:10px;">
                 <%= link_to "About Bricked Electronics", about_url %>
             </li>
-            <li style="margin-bottom:5px;">
+            <li style="margin-bottom:10px;">
                 <%= link_to "Contact Us", contact_url %>
             </li>
-            <li style="margin-bottom:5px;">
+            <li style="margin-bottom:10px;">
                 <%= link_to "Help", help_url %>
             </li>
-            <li style="margin-bottom:5px;">
+            <li style="margin-bottom:10px;">
                 <%= link_to "Homepage", root_url %>
             </li>
             <% if logged_in? %>
-            <li style="margin-bottom:5px;">
+            <li style="margin-bottom:10px;">
                 <%= link_to "Manage My Account", current_user %>
             </li>
             <% end %>
-            <li style="margin-bottom:5px;">
+            <li style="margin-bottom:10px;">
                 <%= link_to "Product Reviews", reviews_url %>
             </li>
-            <li style="margin-bottom:5px;">
+            <li style="margin-bottom:10px;">
                 <%= link_to "Product Search", shop_url %>
             </li>
         </ul>
-        
-        
-    </h2>
+    </h4>
 </div>

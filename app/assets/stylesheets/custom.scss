@@ -33,7 +33,6 @@ textarea {
   }
 }
 
-
 /* typography */
 
 h1, h2, h3, h4, h5, h6 {
@@ -60,8 +59,12 @@ p {
   font-size: 1.1em;
   line-height: 1.7em;
 }
+
 /* header */
 #header {
+  margin-left: auto;
+  margin-right: auto;
+  
   li{
     a{
       border-bottom: 1px solid rgba(255, 255, 255, 0);
@@ -120,7 +123,7 @@ footer {
   }
 }
 
-/* sidebar */
+/* user sidebar */
 
 aside {
   section.user_info {
@@ -144,6 +147,24 @@ aside {
       letter-spacing: -1px;
       margin-bottom: 3px;
       margin-top: 0px;
+    }
+  }
+}
+
+/* show user -> reviews index */
+.reviews{
+  list-style-type: none;
+  
+  .reviewLine {
+    margin-top: 5%;
+    margin-bottom: 5%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-bottom: 3px #666 solid;
+    
+    h5, h6{
+      margin-top: 0;
+      margin-bottom: 5px;
     }
   }
 }

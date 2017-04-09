@@ -6,12 +6,20 @@
     <div class="col-md-8 col-offset-md-3">
       <%= render 'shared/flash' %>
       <% if current_user? @user %>
-        <h1>Your Reviews</h1>
+        <h1>Your Reviews (<%= @user.reviews.count %>)</h1>
       <% else %>
-        <h1>Their Reviews</h1>
+        <h1>Their Reviews (<%= @user.reviews.count %>)</h1>
       <% end %>
-      <%#= @user.microposts %>
+      <% if @user.reviews.any? %>
+        <ol class="reviews">
+          <%= render @reviews %>
+        </ol>
+        <%= will_paginate @reviews %>
+        <% end %>
     </div>
     
+    <div class="col-md-8">
+      
+    </div>
   </div>
 </div>

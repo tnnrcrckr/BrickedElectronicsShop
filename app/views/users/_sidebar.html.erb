@@ -1,4 +1,4 @@
-<aside class="col-md-3">
+<aside class="col-md-3" style="height: 80%;">
   <section class="user_info">
     <h3>
       <%= gravatar_for @user %>
@@ -9,10 +9,10 @@
   <div class="user_ops">
     <% if current_user? @user %>
     <h4>
-      <%= link_to "Write Product Review", '#' unless params[:action] == "review" %>
+      <%= link_to "Write Product Review", new_review_path(id: @user) %>
     </h4>
     <h4>
-      <%= link_to "My Reviews", user_path unless params[:action] == "show" %>
+      <%= link_to "#{@user.name}'s Reviews", @user unless params[:action] == "show" %>
     </h4>
     <h4>
       <%= link_to "Edit Account", edit_user_path(current_user) unless params[:action] == "edit" %>
