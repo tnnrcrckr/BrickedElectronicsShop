@@ -1,0 +1,26 @@
+<% provide(:title, 'Edit Review') %>
+<div class="container">
+  <div class="row">
+    <%= render 'users/sidebar' %>
+    
+    <div class="col-md-8">
+      <h1>Edit a Review</h1>
+      <%= render 'shared/flash' %>
+      
+      <div class="col-md-8 col-md-offset-2">
+        <h2>Original Review<br><br><%= @review.content %></h2>
+      </div>
+      
+      <div class="col-md-12">
+        <%= form_for(@review) do |f| %>
+          <%= render 'shared/error_messages', object: f.object %>
+          <div class="field">
+            <%= f.text_area :content, placeholder: "Edit review..." %>
+          </div>
+          <%= f.submit "Post Changes", class: "btn btn-success" %>
+        <% end %>
+      </div>
+    </div>
+    
+  </div>
+</div>

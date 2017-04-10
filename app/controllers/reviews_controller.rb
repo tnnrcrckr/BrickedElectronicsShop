@@ -1,0 +1,58 @@
+class ReviewsController < ApplicationController
+  before_action :logged_in_user, only: [:create, :destroy]
+  before_action :correct_user,   only: :destroy
+  attr_accessor :content
+    
+    def new
+        @user = User.find(params[:id])
+        @review = @user.reviews.build(review_params)
+    end
+    
+    def create
+        @review = current_user.reviews.build(review_params)
+        if @review.save
+            flash[:success] = "Review created!"
+            redirect_to current_user
+        else
+            string = ""
+            @review.errors.full_messages.each {|msg| string += msg + "\n"}
+            flash[:danger] = string
+            redirect_back(fallback_location: current_user)
+        end
+    end
+    
+    def edit
+        @user = User.find(params[:u_id])
+        @review = @user.reviews.find(params[:r_id])
+    end
+    
+    def update
+        @review = Review.find(params[:id])
+        @review.content = params[:review][:content]
+        if @review.save
+            flash[:success] = "Review edited!"
+            redirect_to current_user
+        else
+            string = ""
+            @review.errors.full_messages.each {|msg| string += msg + "\n"}
+            flash[:danger] = string
+            redirect_back(fallback_location: current_user)
+        end
+    end
+    
+    def destroy
+        Review.find_by(params[:id]).destroy
+        flash[:success] = "Review deleted!"
+        redirect_back(fallback_location: @user)
+    end
+    
+    private
+        def review_params
+            params.require(:review).permit(:content)
+        end
+        
+        def correct_user
+            @review = current_user.reviews.find_by(id: params[:id])
+            redirect_to current_user if @review.nil?
+        end
+end

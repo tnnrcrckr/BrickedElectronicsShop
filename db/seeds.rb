@@ -5,6 +5,8 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+puts("Seeding Users")
 User.create!(name:  "Tanner Crocker",
              email: "tec@email.uscupstate.edu",
              password:              "foobarbin",
@@ -23,7 +25,7 @@ User.create!(name:  "Example User",
 
 98.times do |n|
   name  = Faker::Name.name
-  email = "example-#{n+1}@railstutorial.org"
+  email = Faker::Internet.safe_email("example-#{n+1}") #=> "exampleN@example.net", "exampleN@tutorial.net"
   password = "foobarboo"
   User.create!(name:  name,
                email: email,
@@ -34,9 +36,11 @@ User.create!(name:  "Example User",
    puts("Seeding...") if n % 25 == 0
 end
 
-users = User.order(:created_at).take(6)
-50.times do
-  content = Faker::Lorem.sentence(5)
+puts("Seeding reviews")
+users = User.order(:created_at).take(15)
+10.times do |n|
+  content = ""
+  Faker::Lorem.paragraphs(6).each {|c| content += c + ' '}
   users.each { |user| user.reviews.create!(content: content) }
-   puts("Seeding...") if n % 10 == 0
+   puts("Seeding...") if n % 3 == 0
 end

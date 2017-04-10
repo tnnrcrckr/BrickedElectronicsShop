@@ -9,11 +9,20 @@
   <div class="user_ops">
     <% if current_user? @user %>
     <h4>
-      <%= link_to "Write Product Review", new_review_path(id: @user) %>
+      <%= link_to "Write Product Review", new_review_path(id: @user) unless params[:action] == "new" %>
     </h4>
     <h4>
-      <%= link_to "#{@user.name}'s Reviews", @user unless params[:action] == "show" %>
+      <% if current_user?(@user) %>
+        <%= link_to "My Reviews", @user unless params[:action] == "show" %>
+      <% else %>
+        <%= link_to "#{@user.name}'s Reviews", @user unless params[:action] == "show" %>
+      <% end %>
     </h4>
+      <% if current_user.admin? %>
+        <h4>
+         <%= link_to "Users List", users_path %>
+        </h4>
+      <% end %>
     <h4>
       <%= link_to "Edit Account", edit_user_path(current_user) unless params[:action] == "edit" %>
     </h4>
