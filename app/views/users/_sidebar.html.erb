@@ -39,6 +39,11 @@
         <%= mail_to @user.email, "Contact #{@user.name}" %>
       </h4>
       <% if current_user.admin? %>
+        <h4>
+         <%= link_to "Users List", users_path %>
+        </h4>
+      <% end %>
+      <% if current_user.admin? %>
         <div class="container delete_acc">
           <h5 class="delete_h">
            <%= link_to "Delete Their Account", @user, method: :delete, data: { confirm: "You are sure you want to delete #{@user.name}'s account?" } %>

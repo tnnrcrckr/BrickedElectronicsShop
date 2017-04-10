@@ -36,14 +36,20 @@ class ReviewsController < ApplicationController
             string = ""
             @review.errors.full_messages.each {|msg| string += msg + "\n"}
             flash[:danger] = string
-            redirect_back(fallback_location: current_user)
+        redirect_to current_user
         end
     end
     
     def destroy
-        Review.find_by(params[:id]).destroy
-        flash[:success] = "Review deleted!"
-        redirect_back(fallback_location: @user)
+        @user = User.find(params[:u_id])
+        review = Review.find(params[:r_id])
+        if( review.destroy )
+            flash[:success] = "Review deleted!"
+            redirect_to @user
+        else
+            flash[:warning] = "Review failed to delete!"
+            redirect_to @user
+        end
     end
     
     private
@@ -53,6 +59,6 @@ class ReviewsController < ApplicationController
         
         def correct_user
             @review = current_user.reviews.find_by(id: params[:id])
-            redirect_to current_user if @review.nil?
+            redirect_to current_user if @review.nil? unless current_user.admin
         end
 end
