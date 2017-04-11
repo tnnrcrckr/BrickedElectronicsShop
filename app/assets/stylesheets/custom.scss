@@ -169,6 +169,26 @@ aside {
   }
 }
 
+/* reviews index */
+#reviews_list{
+  list-style-type: none; 
+  padding: 0;
+  margin-left: auto;
+  margin-right: auto;
+  
+  .review_info{
+    padding: 10px 0 5px 0;
+    margin-bottom: 20px;
+    
+    border-bottom: 3px #666 solid;
+   
+    h5, h6{
+      margin-top: 0;
+      margin-bottom: 5px;
+    }
+  } 
+}
+
 /* delete @user link */
 .delete_acc{
   margin-top: 5%;
@@ -194,7 +214,9 @@ aside {
 }
 
 /* forms */
-
+form textarea{
+  height: 200px;
+}
 input, textarea, select, .uneditable-input {
   border: 1px solid #bbb;
   width: 100%;
@@ -274,24 +296,6 @@ input[type="checkbox"] {
   } 
 }
 
-/* reviews index */
-#reviews_list{
-  list-style-type: none; 
-    width: 90%;
-  padding: 0;
-  margin-left: auto;
-  margin-right: auto;
-  
-  .review_info{
-    padding: 10px 0 5px 0;
-    margin-bottom: 20px;
-    margin-left: 20%;
-    margin-right: 20%;
-    
-    border-bottom: 3px #666 solid;
-   
-  } 
-}
 
 /* miscellaneous */
 

@@ -53,7 +53,7 @@ class ReviewsController < ApplicationController
     end
     
     def index
-       @reviews = Review.all.paginate(page: params[:page], :per_page => 15) 
+       @reviews = Review.where('reviews.id IN (SELECT id FROM reviews ORDER BY created_at DESC LIMIT 100)').paginate(page: params[:page], :per_page => 10) 
     end
     
     private

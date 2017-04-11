@@ -3,23 +3,26 @@
   <div class="row">
     <%= render 'users/sidebar' %>
     
-    <div class="col-md-8 col-offset-md-3">
+    <div class="col-md-9">
       <%= render 'shared/flash' %>
+      
       <% if current_user? @user %>
         <h1>Your Reviews (<%= @user.reviews.count %>)</h1>
       <% else %>
         <h1>Their Reviews (<%= @user.reviews.count %>)</h1>
       <% end %>
-      <% if @user.reviews.any? %>
-        <ol class="reviews">
-          <%= render @reviews %>
-        </ol>
-        <%= will_paginate @reviews %>
-        <% end %>
-    </div>
-    
-    <div class="col-md-8">
       
+      <% if @user.reviews.any? %>
+        <ol id="reviews_list" class="">
+          <div class="col-md-offset-1">
+            <%= render @reviews %>
+          </div>
+        </ol>
+        <div class="center">
+          <%= will_paginate @reviews %>
+        </div>
+      <% end %>
+        
     </div>
   </div>
 </div>

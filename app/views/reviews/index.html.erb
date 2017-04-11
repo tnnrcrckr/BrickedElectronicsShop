@@ -1,12 +1,27 @@
 <% provide(:title, "Reviews") %>
 <div class="jumobtron">
     <h1>Reviews</h1>
+    <h2>Below are the 100 newest reviews</h2>
 </div>
 
-<div class="center">
-    <%= will_paginate %>
-        <ol id="reviews_list" class="text-left">
+<div class="row">
+    <div class="col-md-10">
+        <div class="col-md-offset-4">
+            <%= will_paginate @reviews %>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <ol id="reviews_list" class="col-md-10">
+        <div class="col-md-offset-2">
             <%= render @reviews %>
-        </ol>
-    <%= will_paginate %>
+        </div>
+    </ol>
+</div>
+<div class="row">
+    <div class="col-md-10">
+        <div class="col-md-offset-4">
+            <%= will_paginate @reviews %>
+        </div>
+    </div>
 </div>
