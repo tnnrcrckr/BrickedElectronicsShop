@@ -5,13 +5,15 @@
     
     <div class="col-md-8 col-offset-md-3">
       <h1>Write a Review</h1>
+      <h2>about the <%= @review.product.title %></h2>
       <%= render 'shared/flash' %>
+      
       <%= form_for(@review) do |f| %>
         <%= render 'shared/error_messages', object: f.object %>
         <%= hidden_field_tag :p_t, params[:p_t] %>
         <%= hidden_field_tag :p_id, params[:p_id] %>
         <div class="field">
-          <%= f.text_area :content, placeholder: "Compose new review..." %>
+          <%= f.text_area :content, placeholder: "The #{@review.product.title} is..." %>
         </div>
         <%= f.submit "Post", class: "btn btn-success" %>
       <% end %>

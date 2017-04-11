@@ -4,7 +4,7 @@
   <h6 class="price center"><%= number_to_currency(product.price) %></h6>
   <h6 class="description"><%= product.description %></h6>
   <% if logged_in? %>
-    <h2 class="review"><%= link_to "Write review", 
-        new_review_path(:u_id => current_user[:id], :p_id => product[:id], :p_t => product.title) %></h2>
+    <h2 class="review"><%= link_to "write review", 
+        new_review_path(:u_id => current_user[:id], :p_id => product[:id]) %></h2>
   <% end %>
 </li>

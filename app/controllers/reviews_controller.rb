@@ -6,10 +6,12 @@ class ReviewsController < ApplicationController
     def new
         @user = User.find(params[:u_id])
         @review = @user.reviews.build
+        @review.product_id = params[:p_id]
     end
     
     def create
         @review = current_user.reviews.build(review_params)
+        @review.product_id = params[:p_id]
         if @review.save
             flash[:success] = "Review created!"
             redirect_to current_user

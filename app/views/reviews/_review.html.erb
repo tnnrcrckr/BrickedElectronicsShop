@@ -3,8 +3,8 @@
   <h5 class="user">
     <%= link_to review.user.name, review.user %>
     <% unless review.product_id.nil? %>
-      &nbsp; on
-      <%= Product.find(review.product_id)[:title] %>
+      reviewing
+      <b><u><%= review.product.title %></u></b>
     <% end %>
   </h5>
   <h6 class="timestamp">
