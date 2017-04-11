@@ -31,7 +31,7 @@
     </h4>
     <div class="container delete_acc">
       <h5 class="delete_h">
-        <%= link_to "Delete My Account", @user, method: :delete, data: { confirm: "Are you sure you want to delete your account?" } %>
+        <%= link_to "Delete My Account", @user, method: :delete, data: { confirm: "#{current_user.name}, are you sure you want to delete your account?" } %>
       </h5>
     </div>
     <% else %>
@@ -46,7 +46,7 @@
       <% if current_user.admin? %>
         <div class="container delete_acc">
           <h5 class="delete_h">
-           <%= link_to "Delete Their Account", @user, method: :delete, data: { confirm: "You are sure you want to delete #{@user.name}'s account?" } %>
+           <%= link_to "Delete Their Account", @user, method: :delete, data: { confirm: "#{current_user.name}, are sure you want to delete #{@user.name}'s account?" } %>
           </h5>
         </div>
       <% end %>

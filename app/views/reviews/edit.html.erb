@@ -8,7 +8,8 @@
       <%= render 'shared/flash' %>
       
       <div class="col-md-8 col-md-offset-2">
-        <h2>Original Review<br><br><%= @review.content %></h2>
+        <h2>Original review for <%= @review.product.title %></h2>
+        <h2><%= @review.content %></h2>
       </div>
       
       <div class="col-md-12">

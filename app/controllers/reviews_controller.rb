@@ -24,27 +24,27 @@ class ReviewsController < ApplicationController
     end
     
     def edit
-        @user = User.find(params[:u_id])
-        @review = @user.reviews.find(params[:r_id])
+        @review = Review.find(params[:id])
+        @user = @review.user
     end
     
     def update
-        @review = Review.find(params[:r_id])
+        @review = Review.find(params[:id])
         @review.content = params[:review][:content]
         if @review.save
             flash[:success] = "Review edited!"
-            redirect_to current_user
+            redirect_to @review.user
         else
             string = ""
             @review.errors.full_messages.each {|msg| string += msg + "\n"}
             flash[:danger] = string
-        redirect_to current_user
+            redirect_to @review.user
         end
     end
     
     def destroy
-        @user = User.find(params[:u_id])
-        review = Review.find(params[:r_id])
+        review = Review.find(params[:id])
+        @user = review.user
         if( review.destroy )
             flash[:success] = "Review deleted!"
             redirect_to @user

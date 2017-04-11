@@ -5,10 +5,11 @@ class UsersController < ApplicationController
   
   def new
     @user = User.new
+    @user.cart = Cart.build
   end
   
   def index
-    @users = User.where(activated: true).paginate(page: params[:page])
+    @users = User.where(activated: true).paginate(page: params[:page], :per_page => 10)
   end
 
   def show

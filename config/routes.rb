@@ -20,8 +20,8 @@ Rails.application.routes.draw do
   
   get    '/reviews',             to: 'reviews#index'
   get    '/new_review',          to: 'reviews#new'
-  get    '/edit_review/:r_id',   to: 'reviews#edit',    as: "edit_review"
-  delete '/reviews/:u_id/:r_id', to: 'reviews#destroy', as: "delete_review"
+  get    '/edit_review/:id',   to: 'reviews#edit',    as: "edit_review"
+  delete '/reviews/:id', to: 'reviews#destroy', as: "delete_review"
   
   get    '/products', to: 'products#show'
   

@@ -1,15 +1,24 @@
-<li>
-  <section class="user_info delete_acc">
-  <%= gravatar_for user, size: 60 %>
+<li class="user_info">
+  <section class="delete_acc">
+  <%= gravatar_for user, size: 100 %>
   <h4>
     <%= link_to user.name, user %>
   </h4>
-  <h6 class="delete_h">
-    <% if current_user.admin? && !current_user?(user) %>
-      <%= link_to "delete", user, method: :delete, data: { confirm: "You are sure you want to delete #{user.name}'s account?" } %>
-    <% elsif current_user?(user) %>
-      <%= link_to "delete my account", user, method: :delete, data: { confirm: "Are you sure you want to delete your account?" } %>
+  <h6>
+    <% if user.reviews.any? %>
+      <%= user.reviews.count %> reviews written
+    <% else %>
+      No reviews written
     <% end %>
+  </h6>
+  <h6 class="delete_h">
+    <p>
+      <% if current_user.admin? && !current_user?(user) %>
+        <%= link_to "delete", user, method: :delete, data: { confirm: "#{current_user.name}, are sure you want to delete #{user.name}'s account?" } %>
+      <% elsif current_user?(user) %>
+        <%= link_to "delete my account", user, method: :delete, data: { confirm: "#{current_user.name}, are you sure you want to delete your account?" } %>
+      <% end %>
+    </p>
   </h6>
   </section>
 </li>

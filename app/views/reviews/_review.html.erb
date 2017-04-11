@@ -10,9 +10,9 @@
   <h6 class="timestamp">
     Posted <%= time_ago_in_words(review.created_at) %> ago.
     &nbsp;
-    <%= link_to "Edit", edit_review_path(u_id: current_user[:id], r_id: review[:id]) %>
+    <%= link_to "Edit", edit_review_path(id: review.id) %>
     &nbsp;
-    <%= link_to "Delete", delete_review_path(u_id: current_user[:id], r_id: review[:id]), method: :delete, data: {confirm: "Are you sure you want to delet this review?" }%>
+    <%= link_to "Delete", delete_review_path(id: review.id), method: :delete, data: {confirm: "Are you sure you want to delete this review?" }%>
   </h6>
   <% if review.created_at != review.updated_at %>
     <h6 class="timestamp">

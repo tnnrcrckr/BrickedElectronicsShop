@@ -5,9 +5,15 @@
 <h1>All users</h1>
 
 <div class="center">
-    <%= will_paginate %>
-        <ul id="users_index" class="text-left">
+    <%= will_paginate @users %>
+</div>
+<div class="row center-block">
+    <ul id="users_index" class="col-md-8">
+        <div class="col-md-offset-6 text-left">
             <%= render @users %>
-        </ul>
-    <%= will_paginate %>
+        </div>
+    </ul>
+</div>
+<div class="center">
+    <%= will_paginate @users %>
 </div>
