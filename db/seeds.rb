@@ -44,3 +44,36 @@ users = User.order(:created_at).take(15)
   users.each { |user| user.reviews.create!(content: content) }
    puts("Seeding...") if n % 3 == 0
 end
+   
+puts("Seeding products")
+content = ""
+Faker::Lorem.paragraphs(3).each {|c| content += c + ' '}
+
+Product.create!(
+    title: "Starter Kit",
+    description: content,
+    image: "Starter.jpg",
+    price: 83.99
+    )
+Product.create!(
+    title: "Breadboard & Lego Kit",
+    description: content,
+    image: "Breadboard_Lego.jpg",
+    price: 74.99
+    )
+Product.create!(
+    title: "Robotic Arm Kit",
+    description: content,
+    image: "Robo_Arm.jpg",
+    price: 89.99
+    )
+Product.create!(
+    title: "Robotic Rover Kit",
+    description: content,
+    image: "Robo_Rover.jpg",
+    price: 93.99
+    )
+
+
+
+puts("Seeds complete")
