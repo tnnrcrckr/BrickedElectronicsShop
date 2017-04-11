@@ -1,12 +1,18 @@
-<li class="row reviewLine">
+<li class="row review_info">
   <%= link_to gravatar_for(review.user, size: 60), review.user %>
-  <h5 class="user"><%= link_to review.user.name, review.user %></h5>
+  <h5 class="user">
+    <%= link_to review.user.name, review.user %>
+    <% unless review.product_id.nil? %>
+      &nbsp; on
+      <%= Product.find(review.product_id)[:title] %>
+    <% end %>
+  </h5>
   <h6 class="timestamp">
     Posted <%= time_ago_in_words(review.created_at) %> ago.
     &nbsp;
-    <%= link_to "Edit", edit_review_path(u_id: @user, r_id: review) %>
+    <%= link_to "Edit", edit_review_path(u_id: current_user[:id], r_id: review[:id]) %>
     &nbsp;
-    <%= link_to "Delete", delete_review_path(u_id: @user, r_id: review), method: :delete, data: {confirm: "Are you sure you want to delet this review?" }%>
+    <%= link_to "Delete", delete_review_path(u_id: current_user[:id], r_id: review[:id]), method: :delete, data: {confirm: "Are you sure you want to delet this review?" }%>
   </h6>
   <% if review.created_at != review.updated_at %>
     <h6 class="timestamp">

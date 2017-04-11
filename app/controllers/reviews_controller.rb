@@ -4,8 +4,8 @@ class ReviewsController < ApplicationController
   attr_accessor :content
     
     def new
-        @user = User.find(params[:id])
-        @review = @user.reviews.build(review_params)
+        @user = User.find(params[:u_id])
+        @review = @user.reviews.build
     end
     
     def create
@@ -27,7 +27,7 @@ class ReviewsController < ApplicationController
     end
     
     def update
-        @review = Review.find(params[:id])
+        @review = Review.find(params[:r_id])
         @review.content = params[:review][:content]
         if @review.save
             flash[:success] = "Review edited!"
@@ -50,6 +50,10 @@ class ReviewsController < ApplicationController
             flash[:warning] = "Review failed to delete!"
             redirect_to @user
         end
+    end
+    
+    def index
+       @reviews = Review.all.paginate(page: params[:page], :per_page => 15) 
     end
     
     private

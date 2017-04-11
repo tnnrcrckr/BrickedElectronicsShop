@@ -6,7 +6,15 @@
     <div class="col-md-8 col-offset-md-3">
       <h1>Write a Review</h1>
       <%= render 'shared/flash' %>
-      <%= render 'review_form' %>
+      <%= form_for(@review) do |f| %>
+        <%= render 'shared/error_messages', object: f.object %>
+        <%= hidden_field_tag :p_t, params[:p_t] %>
+        <%= hidden_field_tag :p_id, params[:p_id] %>
+        <div class="field">
+          <%= f.text_area :content, placeholder: "Compose new review..." %>
+        </div>
+        <%= f.submit "Post", class: "btn btn-success" %>
+      <% end %>
     </div>
     
   </div>

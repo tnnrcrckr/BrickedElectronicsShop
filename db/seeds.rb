@@ -52,25 +52,25 @@ Faker::Lorem.paragraphs(3).each {|c| content += c + ' '}
 Product.create!(
     title: "Starter Kit",
     description: content,
-    image: "Starter.jpg",
+    image: "products/Starter.jpg",
     price: 83.99
     )
 Product.create!(
     title: "Breadboard & Lego Kit",
     description: content,
-    image: "Breadboard_Lego.jpg",
+    image: "products/Breadboard_Lego.jpg",
     price: 74.99
     )
 Product.create!(
     title: "Robotic Arm Kit",
     description: content,
-    image: "Robo_Arm.jpg",
+    image: "products/Robo_Arm.jpg",
     price: 89.99
     )
 Product.create!(
     title: "Robotic Rover Kit",
     description: content,
-    image: "Robo_Rover.jpg",
+    image: "products/Robo_Rover.jpg",
     price: 93.99
     )
 

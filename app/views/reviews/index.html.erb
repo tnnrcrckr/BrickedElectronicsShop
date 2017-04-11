@@ -1,0 +1,12 @@
+<% provide(:title, "Reviews") %>
+<div class="jumobtron">
+    <h1>Reviews</h1>
+</div>
+
+<div class="center">
+    <%= will_paginate %>
+        <ol id="reviews_list" class="text-left">
+            <%= render @reviews %>
+        </ol>
+    <%= will_paginate %>
+</div>

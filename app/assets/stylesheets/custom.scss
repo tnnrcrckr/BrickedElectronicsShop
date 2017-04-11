@@ -193,23 +193,6 @@ aside {
   }
 }
 
-/* users index */
-#users_index{ li{ 
-    width: 50%;
-    margin-left: auto;
-    margin-right: auto;
-    
-  .user_info{
-    padding-top: 5px;
-    padding-bottom: 5px;
-    margin-top: 5px;
-    margin-bottom: 5px;
-    margin-left: auto;
-    margin-right: auto;
-    border-bottom: 3px #666 solid;
-  } 
-} }
-
 /* forms */
 
 input, textarea, select, .uneditable-input {
@@ -250,16 +233,64 @@ input[type="checkbox"] {
   margin-left: 0;
 }
 
-/* Users index */
+/* users index */
+#users_index{
+  li{ 
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    
+    .user_info{
+      padding-top: 5px;
+      padding-bottom: 5px;
+      margin-top: 5px;
+      margin-bottom: 5px;
+      margin-left: auto;
+      margin-right: auto;
+      border-bottom: 3px #666 solid;
+    } 
+  } 
+}
 
-.users {
-  list-style: none;
-  margin: 0;
-  li {
-    overflow: auto;
-    padding: 10px 0;
-    border-bottom: 1px solid $gray-lighter;
-  }
+/* products index */
+#products_list{
+  list-style-type: none;
+  padding: 0;
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
+  
+  .productLine{ 
+    padding: 15px 20%;
+    
+    transition: background-color 0.5s ease, color 0.25s ease;
+  
+    &:hover{
+      background-color: #444;
+      color: #eee;
+      
+      transition: background-color 0.5s ease, color 0.25s ease;
+    } 
+  } 
+}
+
+/* reviews index */
+#reviews_list{
+  list-style-type: none; 
+    width: 90%;
+  padding: 0;
+  margin-left: auto;
+  margin-right: auto;
+  
+  .review_info{
+    padding: 10px 0 5px 0;
+    margin-bottom: 20px;
+    margin-left: 20%;
+    margin-right: 20%;
+    
+    border-bottom: 3px #666 solid;
+   
+  } 
 }
 
 /* miscellaneous */

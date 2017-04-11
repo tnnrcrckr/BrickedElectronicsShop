@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'products/show'
+
   #get 'password_resets/new'
 
   #get 'password_resets/edit'
@@ -8,8 +10,6 @@ Rails.application.routes.draw do
   get    '/about',   to: 'pages#about'
   get    '/help',    to: 'pages#help'
   get    '/navigation', to: 'pages#navigation'
-  get    '/reviews', to: 'pages#reviews'
-  get    '/shop',    to: 'pages#shop'
   
   get    '/signup',  to: 'users#new'
   post   '/signup',  to: 'users#create'
@@ -18,9 +18,12 @@ Rails.application.routes.draw do
   post   '/login',   to: 'sessions#create'
   delete '/logout',  to: 'sessions#destroy'
   
-  get    '/new_review', to: 'reviews#new'
-  get    '/edit_review', to: 'reviews#edit'
-  delete '/reviews/:id', to: 'reviews#destroy', as: "delete_review"
+  get    '/reviews',             to: 'reviews#index'
+  get    '/new_review',          to: 'reviews#new'
+  get    '/edit_review/:r_id',   to: 'reviews#edit',    as: "edit_review"
+  delete '/reviews/:u_id/:r_id', to: 'reviews#destroy', as: "delete_review"
+  
+  get    '/products', to: 'products#show'
   
   resources :users
   resources :account_activations, only: [:edit]
