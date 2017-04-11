@@ -4,7 +4,13 @@
   <h6 class="price center"><%= number_to_currency(product.price) %></h6>
   <h6 class="description"><%= product.description %></h6>
   <% if logged_in? %>
-    <h2 class="review"><%= link_to "write review", 
-        new_review_path(:u_id => current_user[:id], :p_id => product[:id]) %></h2>
+  <div class="container">
+    <button class="add_to_cart_btn" onclick="">
+      <h2>Add to Cart&nbsp;<span class="glyphicon glyphicon-shopping-cart"></h2></span>
+    </button>
+    <h2 class="review">
+      <%= link_to "write review", new_review_path(:u_id => current_user.id, :p_id => product.id) %>
+    </h2>
+  </div>
   <% end %>
 </li>

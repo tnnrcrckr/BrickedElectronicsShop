@@ -225,6 +225,35 @@ aside {
   }
 }
 
+
+/* products index */
+#products_list{
+  list-style-type: none;
+  padding: 0;
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
+  
+  .productLine{ 
+    padding: 15px 20%;
+    
+    transition: background-color 0.5s ease, color 0.25s ease;
+  
+    &:hover{
+      background-color: #444;
+      color: #eee;
+      
+      transition: background-color 0.5s ease, color 0.25s ease;
+    } 
+  } 
+}
+/* add_to_cart_btn */
+.add_to_cart_btn{
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+
 /* forms */
 form textarea{
   height: 200px;
@@ -265,29 +294,6 @@ input[type="checkbox"] {
 #session_remember_me {
   width: auto;
   margin-left: 0;
-}
-
-
-/* products index */
-#products_list{
-  list-style-type: none;
-  padding: 0;
-  margin-left: auto;
-  margin-right: auto;
-  width: 90%;
-  
-  .productLine{ 
-    padding: 15px 20%;
-    
-    transition: background-color 0.5s ease, color 0.25s ease;
-  
-    &:hover{
-      background-color: #444;
-      color: #eee;
-      
-      transition: background-color 0.5s ease, color 0.25s ease;
-    } 
-  } 
 }
 
 
