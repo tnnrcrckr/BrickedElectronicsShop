@@ -1,5 +1,5 @@
 class Product < ApplicationRecord
-  has_many :reviews
+  has_many :reviews, dependent: :destroy
   has_many :line_items, dependent: :destroy
   default_scope -> { order(created_at: :asc) }
   

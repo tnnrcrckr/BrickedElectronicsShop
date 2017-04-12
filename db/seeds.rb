@@ -23,7 +23,7 @@ User.create!(name:  "Example User",
              activated: true,
              activated_at: Time.zone.now)
 
-98.times do |n|
+48.times do |n|
   name  = Faker::Name.name
   email = Faker::Internet.safe_email("example-#{n+1}") #=> "exampleN@example.net", "exampleN@tutorial.net"
   password = "foobarboo"
@@ -73,8 +73,7 @@ users = User.order(:created_at).take(15)
   content = ""
   Faker::Lorem.paragraphs(6).each {|c| content += c + ' '}
   users.each do |user|
-      prod= Product.all.sample(1)[0]
-      puts(prod.title)
+      prod = Product.all.sample(1)[0]
      user.reviews.create!(
          content: content,
          product: prod
