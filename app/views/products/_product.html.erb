@@ -6,6 +6,7 @@
   <% if logged_in? %>
   <div class="container">
     <button class="add_to_cart_btn" onclick="">
+      <%= link_to "Add to Cart", add_to_cart_path(:u_id => current_user.id, :p_id => product.id ) %>
       <h2>Add to Cart&nbsp;<span class="glyphicon glyphicon-shopping-cart"></h2></span>
     </button>
     <h2 class="review">

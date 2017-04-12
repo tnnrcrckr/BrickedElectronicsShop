@@ -25,6 +25,9 @@ Rails.application.routes.draw do
   
   get    '/products', to: 'products#show'
   
+  get 'add_to_cart/:p_id/:u_id', to: 'carts#add', as: "add_to_cart"
+  get 'rmv_from_cart/:p_id/:u_id', to: 'carts#remove', as: "remove_from_cart"
+  
   resources :users
   resources :account_activations, only: [:edit]
   resources :password_resets,     only: [:new, :create, :edit, :update]
