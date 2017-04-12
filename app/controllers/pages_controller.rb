@@ -1,5 +1,6 @@
 class PagesController < ApplicationController
   def home
+    @review = Review.all.sample(1)[0]
     render file: "pages/home.html.erb"
   end
 

@@ -73,9 +73,11 @@ users = User.order(:created_at).take(15)
   content = ""
   Faker::Lorem.paragraphs(6).each {|c| content += c + ' '}
   users.each do |user|
+      prod= Product.all.sample(1)[0]
+      puts(prod.title)
      user.reviews.create!(
          content: content,
-         product: Product.find(rand(Product.count-1)+1)
+         product: prod
          ) 
   end
    puts("Seeding...") if n % 3 == 0

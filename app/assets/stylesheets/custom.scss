@@ -123,6 +123,17 @@ footer {
   }
 }
 
+/* Featured Page */
+#featured_page{
+  margin: inherit 1%;
+  #featured_product{
+    
+  }
+  #featured_review{
+    list-style-type: none;
+  }
+}
+
 /* user sidebar */
 
 aside {
@@ -247,6 +258,7 @@ aside {
     } 
   } 
 }
+
 /* add_to_cart_btn */
 .add_to_cart_btn{
   background-color: transparent;
