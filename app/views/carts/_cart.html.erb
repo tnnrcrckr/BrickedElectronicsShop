@@ -1,12 +1,7 @@
-<div id="cart" style="display:none; position: fixed; width: 50%; height:80%; left:25%; top:10%; background-color:#ddd; padding: 10px; outline: 5px #888 solid; outline-radius: 5px; z-index:3;">
-    <div class="container">
+<div id="cart" style="display:none; position: fixed; width: 50%; height:80%; left:25%; top:10%; background-color:#ddd; padding: 10px; outline: 5px #888 solid; outline-radius: 5px; z-index:5;">
+    <div id="cart_header" class="container">
         <div class="row">
-            <!--
-            <div class="col-md-1 col-md-offset-1" style="padding: 10px 0 10px 0">
-                <%#= button_to "Checkout", '#', onclick: "toggleCart()", class: "btn btn-disabled btn-primary" %>
-            </div>
-            -->
-            <div class="col-md-3">
+            <div class="col-md-9">
                 <h4>Total: <%= number_to_currency(current_user.cart.total) %></h4>
             </div>
             <div class="col-md-3">
@@ -15,14 +10,17 @@
         </div>
     </div>
     
-    <div class="row">
+    <div id="cart_list" class="row">
         <% if current_user.cart.empty?%>
             <h5><i>Your cart is empty.</i></h5>
         <% else %>
-            <ul id="cart_list">
-                <%= render current_user.cart.line_items %>
-            </ul>
+            <table class="table table-hover">
+                <tbody>
+                    <!-- If a user adds too many items, they won't be able to see them all -->
+                    <%= render current_user.cart.line_items %>
+                </tbody>
+            </table>
         <% end %>
     </div>
 </div>
-<div id="cart_blur" style="display:none; position: fixed; width: 100%; height:100%; top: 0; left: 0; background: #000; opacity: 0.75; filter: alpha(opacity = 75); z-index:2;" onclick="toggleCart();"></div>
+<div id="cart_blur" style="display:none; position: fixed; width: 100%; height:100%; top: 0; left: 0; background: #000; opacity: 0.75; filter: alpha(opacity = 75); z-index:4;" onclick="toggleCart();"></div>

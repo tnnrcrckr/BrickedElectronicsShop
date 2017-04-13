@@ -1,8 +1,14 @@
 <li class="row productLine">
   <%= image_tag(product.image, :alt => "Image for #{product.title}", :width => "400px", :class => "center-block") %>
-  <h4 class="title center"><%= product.title %></h4>
-  <h6 class="price center"><%= number_to_currency(product.price) %></h6>
-  <h6 class="description"><%= product.description %></h6>
+  <h4 class="title center">
+    <%= product.title %>
+  </h4>
+  <h6 class="price center">
+    <%= number_to_currency(product.price) %>
+  </h6>
+  <h6 class="description">
+    <%= product.description %>
+  </h6>
   <% if logged_in? %>
   <div class="container">
     <button class="add_to_cart_btn" onclick="">

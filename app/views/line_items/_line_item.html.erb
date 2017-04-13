@@ -1,0 +1,11 @@
+<tr class="text-center">
+    <td>
+        <%= line_item.product.title %>
+    </td>
+    <td>
+        <%= number_to_currency(line_item.product.price) %>
+    </td>
+    <td>
+        <%= link_to "Remove", remove_from_cart_path(line_item[:id]), method: :post %>
+    </td>
+</tr>
