@@ -7,26 +7,12 @@
 <div id="featured_page">
 	<div id="featured_product" class="row">
 		<div class="col-md-8 col-md-offset-2">
-			<!-- Wanted @review.product, but didn't want description -->
-			<%= image_tag(@review.product.image, :alt => "Image for #{@review.product.title}", :width => "400px", :class => "center-block") %>
-			<h4 class="title center"><%= @review.product.title %></h4>
-			<h6 class="price center"><%= number_to_currency(@review.product.price) %></h6>
-			<% if logged_in? %>
-				<div class="container">
-					<button class="add_to_cart_btn" onclick="">
-						<%= link_to "Add to Cart", add_to_cart_path(:u_id => current_user.id, :p_id => @review.product.id ) %>
-						<h2>Add to Cart&nbsp;<span class="glyphicon glyphicon-shopping-cart"></h2></span>
-					</button>
-					<h2 class="review">
-						<%= link_to "write review", new_review_path(:u_id => current_user.id, :p_id => @review.product.id) %>
-					</h2>
-				</div>
-			<% end %>
+			<%= render @reviews[0].product %>
 		</div>
 	</div>
-	<div id="featured_review" class="row">
-		<div class="col-md-8 col-md-offset-2">
-			<%= render @review %>
-		</div>
-	</div>
+	<ol id="feat_review_list" class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <%= render @reviews %>
+        </div>
+    </ol>
 </div>

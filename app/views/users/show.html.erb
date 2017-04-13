@@ -3,7 +3,7 @@
   <div class="row">
     <%= render 'users/sidebar' %>
     
-    <div class="col-md-9">
+    <div class="col-md-7 col-md-offset-1">
       <%= render 'shared/flash' %>
       
       <% if current_user? @user %>
@@ -14,7 +14,7 @@
       
       <% if @user.reviews.any? %>
         <ol id="reviews_list" class="">
-          <div class="col-md-offset-1">
+          <div class="">
             <%= render @reviews %>
           </div>
         </ol>

@@ -4,7 +4,7 @@
     <%= link_to review.user.name, review.user %>
     <% unless review.product_id.nil? %>
       reviewing
-      <b><u><%= review.product.title %></u></b>
+      <b><u><%= link_to review.product.title, products_path %></u></b>
     <% end %>
   </h5>
   <h6 class="timestamp">

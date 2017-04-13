@@ -4,11 +4,13 @@
     <h1>Login</h1>
 </div>
 
-<div class=container>
-    <% if(logged_in?) %>
-        <%= redirect_to user_path %>
-    <% else %>
+<% if(logged_in?) %>
+    <%= redirect_to user_path %>
+<% else %>
+    <div class="container">
+        <div class="col-md-8 col-md-offset-2">
         <%= render "users/login_form" %>
         <p>New user? <%= link_to "Sign up now!", signup_path %></p>
-    <% end %>
-</div>
+        </div>
+    </div>
+<% end %>

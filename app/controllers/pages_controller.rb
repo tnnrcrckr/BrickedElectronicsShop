@@ -1,6 +1,7 @@
 class PagesController < ApplicationController
   def home
-    @review = Review.all.sample(1)[0]
+    p = Product.all.sample(1)[0].id
+    @reviews = Review.where(:product_id => p).sample(3)
     render file: "pages/home.html.erb"
   end
 
