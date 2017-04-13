@@ -203,21 +203,17 @@ aside {
   margin-left: 1%;
   margin-right: 1%;
   
-  ul, ol{
-    padding: 0;
-    margin-left: auto;
-    margin-right: auto;
+  padding: none;
+  
+  .review_info{
+    padding: 10px 0 5px 0;
+    margin-bottom: 20px;
     
-    .review_info{
-      padding: 10px 0 5px 0;
-      margin-bottom: 20px;
-      
-      border-bottom: 3px #666 solid;
-     
-      h5, h6{
-        margin-top: 0;
-        margin-bottom: 5px;
-      }
+    border-bottom: 3px #666 solid;
+   
+    h5, h6{
+      margin-top: 0;
+      margin-bottom: 5px;
     }
   }
 }
@@ -239,21 +235,6 @@ aside {
 #edit_user{
 }
 
-/* show user page (reviews list) */
-.reviews{
-  .reviewLine {
-    margin-top: 5%;
-    margin-bottom: 5%;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    border-bottom: 3px #666 solid;
-    
-    h5, h6{
-      margin-top: 0;
-      margin-bottom: 5px;
-    }
-  }
-}
 
 /* delete @user link */
 .delete_acc{
