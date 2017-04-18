@@ -22,8 +22,16 @@ User.create!(name:  "Example User",
              admin:     true,
              activated: true,
              activated_at: Time.zone.now)
+             
+User.create!(name:  "Example User2",
+             email: "generic_user@email.com",
+             password:              "foobarboo",
+             password_confirmation: "foobarboo",
+             admin:     false,
+             activated: true,
+             activated_at: Time.zone.now)
 
-48.times do |n|
+47.times do |n|
   name  = Faker::Name.name
   email = Faker::Internet.safe_email("example-#{n+1}") #=> "exampleN@example.net", "exampleN@tutorial.net"
   password = "foobarboo"
