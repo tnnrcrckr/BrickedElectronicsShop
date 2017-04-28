@@ -19,3 +19,5 @@
 
 #Ignore cache files
 *.cache
+# Ignore application configuration
+/config/application.yml
