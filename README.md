@@ -3,9 +3,6 @@ Ruby on Rails Sample Application
 Created as part of CSCI 450. An example of an online store website.
 
 
-I edited this a little bit after submitting the project; I noticed a admin-privilege bug, which has been fixed. If you want to see the project as it was when it was presented, use the submitted_project branch.
-
-
 
 ## Getting started
 
