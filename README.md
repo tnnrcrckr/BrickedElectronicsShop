@@ -2,8 +2,9 @@ Ruby on Rails Sample Application
 
 Created as part of CSCI 450. An example of an online store website.
 
-website: bricked-electronics-shop.herokuapp.com
-
+```
+bricked-electronics-shop.herokuapp.com
+```
 
 ## Getting started
 
